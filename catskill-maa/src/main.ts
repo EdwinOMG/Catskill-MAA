@@ -4,29 +4,22 @@ import App from './App.vue'
 // Router
 import router from './router'
 
-// Vuetify
-import { createVuetify } from 'vuetify'
-import 'vuetify/styles'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
+// PrimeVue
+import PrimeVue from 'primevue/config'
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
+import Aura from '@primeuix/themes/aura';
 
-// Tailwind CSS
-import './assets/main.css'
-
-// VueUse Motion
+// Optional: VueUse Motion if you're still using it
 import { MotionPlugin } from '@vueuse/motion'
 
-
-
-const vuetify = createVuetify({
-  icons: {
-    defaultSet: 'mdi',
-    aliases,
-    sets: { mdi },
-  },
-})
-
 const app = createApp(App)
+
 app.use(router)
-app.use(vuetify)
-app.use(MotionPlugin)
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura
+    }
+});
+app.use(MotionPlugin) // keep only if you still use it
 app.mount('#app')
