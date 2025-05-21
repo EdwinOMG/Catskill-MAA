@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import Button from "primevue/button"
-
+import Hero from '../components/Hero.vue'
+import Homebox from '../components/Homebox.vue'
 </script>
 
 <template>
-  <main>
-    <Button />
-  </main>
+  <Hero />
+  <Homebox />
 </template>
+
+<style scoped>
+
+</style>
