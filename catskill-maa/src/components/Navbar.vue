@@ -14,9 +14,7 @@ const toggleMenu = () => {
    <nav class="navbar is-transparent is-fixed-top">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-        <figure class="image is-128x128">
-            <img src="../assets/logo.jpg" />
-        </figure>
+        
     </a>
     <div class="navbar-burger js-burger" aria-label="menu" aria-expanded="false" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen} ">
       <span></span>
