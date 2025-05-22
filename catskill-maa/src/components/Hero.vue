@@ -14,6 +14,8 @@
 <style scoped>
 .hero {
   padding-top: 20rem;
-  
+  background-color: aliceblue;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

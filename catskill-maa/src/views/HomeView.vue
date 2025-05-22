@@ -4,8 +4,12 @@ import Homebox from '../components/Homebox.vue'
 </script>
 
 <template>
-  <Hero />
-  <Homebox />
+  <section>
+      <Hero />
+  </section>
+  <section>
+      <Homebox />
+  </section>
 </template>
 
 <style scoped>
