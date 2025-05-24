@@ -27,13 +27,13 @@
 @use '../../catskill-maa.scss' as *;
     .footer {
         background-color: $white;
-        
+        margin-top: 10rem!important;
         
     }
     .title {
-        color:$blue7;
+        color:black;
     }
     .subtitle {
-        color: $blue7;
+        color: darkblue;
     }
 </style>
