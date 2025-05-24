@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@primeuix/themes": "^1.1.1",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/vue-splide": "^0.6.12",
     "@vueuse/motion": "^3.0.3",
     "bulma": "^1.0.4",
     "primeflex": "^4.0.0",

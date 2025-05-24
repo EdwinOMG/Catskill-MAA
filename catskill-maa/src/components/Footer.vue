@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <footer class="footer py-0 ">
+    <footer class="footer py-0   ">
         <div class="container">
             <h2 class="title has-text-centered is-2 mb-2 ">Start your journey today!</h2>
 
@@ -23,6 +23,17 @@
     </footer >
 </template>
 
-<style scoped>
-    
+<style scoped lang="scss">
+@use '../../catskill-maa.scss' as *;
+    .footer {
+        background-color: $white;
+        
+        
+    }
+    .title {
+        color:$blue7;
+    }
+    .subtitle {
+        color: $blue7;
+    }
 </style>

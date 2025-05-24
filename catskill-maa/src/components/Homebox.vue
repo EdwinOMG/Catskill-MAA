@@ -8,7 +8,8 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@use '../../catskill-maa.scss' as *;
 .box {
   padding-top: 3rem;
   width: 85%;

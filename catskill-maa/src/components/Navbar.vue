@@ -29,13 +29,15 @@ const toggleMenu = () => {
       <a class="navbar-item"> Home </a>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-item navbar-link" > About </a>
+
+        
         <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" > Our Founders </a>
-          <a class="navbar-item"> Our Team </a>
+          <a class="dropitem navbar-item" > Our Founders </a>
+          <a class="dropitem navbar-item"> Our Team </a>
           <hr class="navbar-divider">
-          <a class="navbar-item"> Classes </a>
-          <a class="navbar-item is-selected"> Media </a>
-          <a class="navbar-item"> Quiz(maybe) </a>
+          <a class="dropitem navbar-item"> Classes </a>
+          <a class="dropitem navbar-item is-selected"> Media </a>
+          <a class="dropitem navbar-item"> Quiz(maybe) </a>
         </div>
       </div>
         <a class="navbar-item"> Events </a>
@@ -63,11 +65,12 @@ const toggleMenu = () => {
 @use '../../catskill-maa.scss' as *;
 
 .trial-but {
-  background-color: $blue7;
+  background-color: darkblue;
   color: $white;
   font-weight: bold;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
+    outline: none;
 
   &:hover {
     background-color: $blue5;
@@ -84,15 +87,30 @@ const toggleMenu = () => {
  .navbar-item {
    padding: 25px;
    text-align: center;
-   color: $blue7;
+   color: darkblue;
    font-weight: bold;
    font-size: 1.2rem;
 
 
    &:hover {
-     background-color: $blue5;
-     color: $white;
+     background-color: $blue7;
+     color: black;
    }
+   
+ }
+
+ .navbar-dropdown{ 
+    background-color: $white;
+ }
+
+ .navbar-divider {
+    background-color: darkblue!important;
+ }
+
+ .dropitem {
+    background-color: $white!important;
+    color: black!important;
+
  }
 
 </style>
