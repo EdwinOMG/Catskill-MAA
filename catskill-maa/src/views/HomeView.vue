@@ -2,7 +2,7 @@
 import Hero from '../components/Hero.vue'
 import Homebox from '../components/Homebox.vue'
 import Splideshow from '../components/Splideshow.vue';
-
+import Map from '../components/Map.vue'
 </script>
 
 <template>
@@ -11,6 +11,9 @@ import Splideshow from '../components/Splideshow.vue';
   </section>
   <section>
       <Homebox />
+  </section>
+  <section>
+    <Map />
   </section>
 </template>
 
