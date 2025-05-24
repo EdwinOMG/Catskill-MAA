@@ -27,8 +27,8 @@
 @use '../../catskill-maa.scss' as *;
     .footer {
         background-color: $white;
-        margin-top: 10rem!important;
-        
+        margin-top: 0px;   
+        height: 300px;     
     }
     .title {
         color:black;

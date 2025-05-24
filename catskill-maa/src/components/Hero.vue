@@ -4,7 +4,8 @@
 <template>
     <section class="hero ">
   <div class="hero-body">
-    
+    Self-defense, Community, Compete, Physical Fitness
+
   </div>
 </section>
 </template>

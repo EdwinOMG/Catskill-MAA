@@ -49,8 +49,8 @@ const toggleMenu = () => {
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="trial-but button">
-              <span> Schedule a FREE trial class </span>
+            <a class="trial-but btn btn-swipe-left btn-swipe-left--black button">
+              <span> Join Now! </span>
             </a>
           </p>
     
@@ -64,6 +64,58 @@ const toggleMenu = () => {
 <style scoped lang="scss">
 @use '../../catskill-maa.scss' as *;
 
+
+.btn:hover .btn-slide-show-text1 {
+  margin-left: 65px;
+} 
+ 
+.btn-swipe-left {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  max-width: 180px;
+  padding: 10px;
+  margin: auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  font-family: lato, serif;
+} 
+ 
+.btn-swipe-left::before {
+  content: "";
+  transform: translateX(-150%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 140%;
+  width: 240%;
+  transition: 0.5s ease-in-out;
+} 
+ 
+.btn-swipe-left span {
+  z-index: 2;
+  position: relative;
+  transition: 0.5s ease-in-out;
+} 
+ 
+.btn-swipe-left:hover span {
+  color: rgb(255, 255, 255);
+} 
+ 
+.btn-swipe-left:hover::before {
+  transform: translateX(-50%);
+} 
+ 
+.btn-swipe-left--black {
+  color: rgb(51, 51, 51);
+  border: 2px solid rgb(51, 51, 51);
+} 
+ 
+.btn-swipe-left--black::before {
+  background-color: $blue4;
+} 
+ 
 .trial-but {
   background-color: darkblue;
   color: $white;
@@ -72,10 +124,12 @@ const toggleMenu = () => {
   transition: background-color 0.3s ease;
     outline: none;
 
-  &:hover {
-    background-color: $blue5;
-    color: $white;
-  }
+     &:hover {
+        background-color: $white!important;
+    }
+
+   
+  
 }
 .navbar {
     background-color: $white;
@@ -91,11 +145,12 @@ const toggleMenu = () => {
    font-weight: bold;
    font-size: 1.2rem;
 
+    &:hover {
+        background-color: $blue2;
+        color: darkblue;
+    }
 
-   &:hover {
-     background-color: $blue7;
-     color: black;
-   }
+   
    
  }
 
