@@ -24,16 +24,16 @@ const toggleMenu = () => {
     </div>
   </div>
 
-  <div class="navbar-menu"  v-bind:class="{'is-active': isOpen}">
-    <div class="navbar-start">
-      <a class="navbar-item"> Home </a>
+  <div class="navbar-menu menu2"  v-bind:class="{'is-active': isOpen}">
+    <div class="navbar-start menu2">
+      <router-link to="/" class="navbar-item"> Home </router-link>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-item navbar-link" > About </a>
+        <a class="navbar-link" > About </a>
 
         
         <div class="navbar-dropdown is-boxed">
-          <a class="dropitem navbar-item" > Our Founders </a>
-          <a class="dropitem navbar-item"> Our Team </a>
+        <router-link to="/founders" class="dropitem navbar-item"> Our Founders </router-link>
+         <router-link to="/Team" class="dropitem navbar-item"> Our Team </router-link>
           <hr class="navbar-divider">
           <a class="dropitem navbar-item"> Classes </a>
           <a class="dropitem navbar-item is-selected"> Media </a>
@@ -63,6 +63,41 @@ const toggleMenu = () => {
 
 <style scoped lang="scss">
 @use '../../catskill-maa.scss' as *;
+
+.navbar {
+    position: sticky;
+}
+.navbar-item::before,
+.navbar-item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border: 0px solid transparent;
+  width: 0%;
+  height: 0%;
+  transition: all 0.5s ease;
+}
+
+.navbar-item::after {
+  top: 0;
+  left: 0;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+.navbar-item::before {
+  right: 0;
+  bottom: 0;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+.navbar-item:hover::before,
+.navbar-item:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: #fff; /* Adjust the color as needed */
+}
 
 
 .btn:hover .btn-slide-show-text1 {
@@ -121,6 +156,7 @@ const toggleMenu = () => {
   color: $white;
   font-weight: bold;
   padding: 10px 20px;
+  
   transition: background-color 0.3s ease;
     outline: none;
 
@@ -168,4 +204,12 @@ const toggleMenu = () => {
 
  }
 
+.navbar-link {
+    color: darkblue;
+
+    &:hover {
+        background-color: $blue2;
+        color: darkblue;
+    }
+}
 </style>

@@ -20,7 +20,7 @@
                 <img src="/image3.jpg" alt="Image 3"/>
             </div>
         </div>
-        <div class="column floating">
+        <div class="column floating rightside">
             <div class="box down hover-underline">
                 <img src="/image4.jpg" alt="Image 4"/>
             </div>
@@ -120,5 +120,8 @@
             margin-top: 0px;
         }
         
+    }
+    .rightside {
+        padding-right: 0px;
     }
 </style>
