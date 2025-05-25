@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FoundersView from '../views/FoundersView.vue'
 import TeamView from '../views/TeamView.vue'
+import MediaView from '../views/MediaView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/Team',
       name: 'aboutTeam',
       component: TeamView,
+    },
+      {
+      path: '/Media',
+      name: 'aboutMedia',
+      component: MediaView,
     },
   ],
 })

@@ -36,7 +36,7 @@ const toggleMenu = () => {
          <router-link to="/Team" class="dropitem navbar-item"> Our Team </router-link>
           <hr class="navbar-divider">
           <a class="dropitem navbar-item"> Classes </a>
-          <a class="dropitem navbar-item is-selected"> Media </a>
+          <router-link to="/Media" class="dropitem navbar-item is-selected"> Media </router-link>
           <a class="dropitem navbar-item"> Quiz(maybe) </a>
         </div>
       </div>
