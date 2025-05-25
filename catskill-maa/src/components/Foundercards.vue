@@ -3,69 +3,77 @@
 </script>
 
 <template>
-    <div class="box">
-        <h1 class="title headtitle has-text-black has-text-centered">Founders</h1>
-        <h2 class="subtitle has-text-black has-text-centered">Meet the founders of the Catskill Martial Arts Academy</h2>
-    <div class="columns">
- 
-    <div class="card column is-one-quarter is-offset-one-quarter ">
-        <div class="card-image">
-            <figure class="image is-3by2">
-                <img src="/walterbelsito.png" alt="Founders" />
-            </figure>   
-            </div>  
-        <div class="media-content">
-            <p class="title has-text-black">Walter Belsito</p>
-            <p class="subtitle has-text-black is-6">Founder</p>
-        </div>
-    <div class="content">
-    swwwswswswswswswswswswswswsws
+ <!-- Donald Belsito Section -->
+<div class="container">
+<div class="founder-block">
+  <div class="media is-align-items-center">
+    <figure class="media-left image is-128x128">
+      <img src="/donaldbelsito.jpg" alt="Donald Belsito" />
+    </figure>
+    <div class="media-content">
+      <h1 class="title nametitle has-text-black">Donald Belsito</h1>
+      <h2 class="subtitle roletitle has-text-black is-4">Grandmaster/Head Instructor</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat eos provident dolor nihil, nam necessitatibus reiciendis ipsam eligendi voluptatum accusamus quam perferendis officia ut iusto accusantium nulla corporis? Nulla, esse.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum iure itaque quia magnam sint atque, qui repudiandae dolorem illum porro. Debitis nostrum nobis saepe perspiciatis ipsa consequuntur eveniet laboriosam?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio doloremque exercitationem quo autem recusandae hic vero eius maxime molestias, iste iusto aperiam minima in dignissimos consequuntur, eligendi necessitatibus, deserunt cumque!
+      </p>
     </div>
+  </div>
 </div>
 
- <div class="card column is-one-quarter ">
-        <div class="card-image">
-            <figure class="image is-3by2">
-                <img src="/donaldbelsito.jpg" alt="Founders" />
-            </figure>
-            </div>
-        <div class="media-content">
-            <p class="title has-text-black">Donald Belsito</p>
-            <p class="subtitle has-text-black is-6">Grandmaster and Head Instructor</p>
-        </div>
-    <div class="content">
-    swwwswswswswswswswswswswswsws
+<!-- Walter Belsito Section -->
+<div class="founder-block mt-5">
+  <div class="media is-align-items-center">
+    <div class="media-content has-text-right">
+      <h1 class="title nametitle has-text-black">Walter Belsito</h1>
+      <h2 class="subtitle roletitle has-text-black is-4">Founder and Grandmaster</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat eos provident dolor nihil, nam necessitatibus reiciendis ipsam eligendi voluptatum accusamus quam perferendis officia ut iusto accusantium nulla corporis? Nulla, esse.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum iure itaque quia magnam sint atque, qui repudiandae dolorem illum porro. Debitis nostrum nobis saepe perspiciatis ipsa consequuntur eveniet laboriosam?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio doloremque exercitationem quo autem recusandae hic vero eius maxime molestias, iste iusto aperiam minima in dignissimos consequuntur, eligendi necessitatibus, deserunt cumque!
+      </p>
     </div>
+    <figure class="media-right image is-128x128 ml-4">
+      <img src="/walterbelsito.png" alt="Walter Belsito" />
+    </figure>
+  </div>
 </div>
 </div>
-</div>
-
 </template>
 
 <style scoped lang="scss">
 @use '../../catskill-maa.scss' as *;
-
-.card {
-    padding-top: 10px;
-    
-    width: 100px;
-    background-color: white;
-    color: black;
-    border-radius: 0px;
-    background-color: transparent;
+.nametitle {
+    padding-bottom: 12px;
 }
+.container {
+    padding-top: 110px;
+}
+.founder-block {
+  margin-bottom: 2rem;
+}
+
+.media {
+  align-items: center;
+}
+
+.media-left,
+.media-right {
+  flex: none;
+}
+
 .media-content {
-    text-align: center;
-    font-style: italic;
+  flex: 1;
+  text-align: left;
 }
 
-.box {
-    background-color: $blue2;
-    
-    
+.media-content.has-text-right {
+  text-align: right;
 }
-.headtitle {
-    padding-top:15px;
-    margin-top: 80px;
+
+.image.is-128x128 {
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 </style>
