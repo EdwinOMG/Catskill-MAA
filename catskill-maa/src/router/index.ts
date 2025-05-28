@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import FoundersView from '../views/FoundersView.vue'
 import TeamView from '../views/TeamView.vue'
 import MediaView from '../views/MediaView.vue'
+import ContactView from '../views/ContactView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -25,6 +26,11 @@ const router = createRouter({
       path: '/Media',
       name: 'aboutMedia',
       component: MediaView,
+    },
+     {
+      path: '/Contact',
+      name: 'Contact',
+      component: ContactView,
     },
   ],
 })

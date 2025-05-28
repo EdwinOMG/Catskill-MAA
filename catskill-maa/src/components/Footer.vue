@@ -20,7 +20,7 @@
             <div class="columns is-multiline">
                 <div class="column is-3 has-text-centered">
                     <figure class="image is-inline-block">
-                        <img src="/logo.jpg" alt="Catskill Martial Arts Academy Logo" />
+                        <img src="/logo.png" alt="Catskill Martial Arts Academy Logo" />
                     </figure>
                     <p class="has-text-white mt-2">Catskill Martial Arts Academy</p>
                 </div>

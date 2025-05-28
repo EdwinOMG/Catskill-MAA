@@ -12,7 +12,7 @@
     </figure>
     <div class="media-content">
       <h1 class="title nametitle has-text-black">Donald Belsito</h1>
-      <h2 class="subtitle roletitle has-text-black is-4">Grandmaster/Head Instructor</h2>
+      <h2 class="subtitle roletitle has-text-black is-4">Grandmaster and Head Instructor</h2>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat eos provident dolor nihil, nam necessitatibus reiciendis ipsam eligendi voluptatum accusamus quam perferendis officia ut iusto accusantium nulla corporis? Nulla, esse.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum iure itaque quia magnam sint atque, qui repudiandae dolorem illum porro. Debitis nostrum nobis saepe perspiciatis ipsa consequuntur eveniet laboriosam?
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio doloremque exercitationem quo autem recusandae hic vero eius maxime molestias, iste iusto aperiam minima in dignissimos consequuntur, eligendi necessitatibus, deserunt cumque!

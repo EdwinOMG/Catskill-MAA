@@ -14,7 +14,7 @@ const toggleMenu = () => {
    <nav class="navbar is-transparent is-fixed-top">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-        
+        <img src="/logo.png" alt="Catskill MAA Logo">
     </a>
     <div class="navbar-burger js-burger" aria-label="menu" aria-expanded="false" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen} ">
       <span></span>
@@ -41,7 +41,7 @@ const toggleMenu = () => {
         </div>
       </div>
         <a class="navbar-item"> Events </a>
-        <a class="navbar-item"> Contact </a>
+        <router-link to="/Contact" class="navbar-item"> Contact </router-link>
 
     </div>
 
@@ -49,9 +49,9 @@ const toggleMenu = () => {
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="trial-but btn btn-swipe-left btn-swipe-left--black button">
+            <router-link to="/Contact" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
               <span> Join Now! </span>
-            </a>
+            </router-link>
           </p>
     
         </div>
@@ -62,8 +62,14 @@ const toggleMenu = () => {
 </template>
 
 <style scoped lang="scss">
+
 @use '../../catskill-maa.scss' as *;
 
+.navbar-item img {
+  height: 100%;
+  max-height: 3.25rem;
+  width: auto;
+}
 .navbar {
     position: sticky;
 }
