@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { GoogleMap, Marker } from 'vue3-google-map'
-const APIKEY="AIzaSyB9bvPl80g9ntUKtsuTnKF0E1o730i1JPI"
-
+const apiKey = import.meta.env.VUE_APP_API_KEY;
 const center =  { lat: 41.77097496721765, lng: -74.65850133820045}
 </script>
 
 <template>
     <GoogleMap 
-    :api-key="APIKEY"
+    :api-key="apiKey"
     style="width: 100%; height: 300px;"
     :center="center"
     :zoom="15"
