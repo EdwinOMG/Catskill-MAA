@@ -23,9 +23,7 @@ import Newsfeed from '@/components/Newsfeed.vue';
 </template>
 
 <style scoped>
-.feed {
-    
-}
+
 .gallery {
     margin-top: 80px;
     

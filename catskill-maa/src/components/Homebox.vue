@@ -39,7 +39,7 @@
 
 .paragraph {
     color: black;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 </style>

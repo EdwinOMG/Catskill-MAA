@@ -3,30 +3,20 @@
 </script>
 
 <template>
-    <div class="box mainbox">
-    <div class="columns is-desktop">
-        <div class="column floating">
-            <div class="box hover-underline">
-                <img src="/image1.jpg" alt="Image 1"/>
-            </div>
-        </div>
-        <div class="column floating">
-            <div class="box down hover-underline">
-                <img src="/image2.jpg" alt="Image 2"/>
-            </div>
-        </div>
-        <div class="column floating ">
-            <div class="box hover-underline">
-                <img src="/image3.jpg" alt="Image 3"/>
-            </div>
-        </div>
-        <div class="column floating rightside">
-            <div class="box down hover-underline">
-                <img src="/image4.jpg" alt="Image 4"/>
-            </div>
-        </div>
+  <div class="mainbox">
+    <div class="floating box hover-underline">
+      <img src="/image1.jpg" alt="Image 1" />
     </div>
+    <div class="floating box hover-underline">
+      <img src="/image2.jpg" alt="Image 2" />
     </div>
+    <div class="floating box hover-underline">
+      <img src="/image3.jpg" alt="Image 3" />
+    </div>
+    <div class="floating box hover-underline">
+      <img src="/image4.jpg" alt="Image 4" />
+    </div>
+  </div>
 </template>
 <style scoped>
 .hover-underline {
@@ -60,68 +50,75 @@
   transform: scaleX(1);
 }
 
-.floating {
-            
-            border-radius: 50%;
-            position: relative;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-
-.columns {
-    width: 100%;
+.mainbox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-top: 0;
 }
-    .cardimages {
-        width: 300px!important;
-        justify-content: center;
-    }
-    
-    .box {
-        background-color: transparent;
-        width: 300px;
-    }
-    .down {
-        margin-top: 200px;
-    }
 
-    .mainbox {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-    }
-    @media screen and (max-width: 720px) {
-        .mainbox {
-            padding-top: 230px;
-        }
-        .down {
-            margin-top: 0px;
-        }
-    }
-    @media screen and (max-width: 1024px) {
-        .mainbox {
-            margin-top: 0px;
-            
-        }
-        .down {
-            margin-top: 0px;
-        }
-        
-    }
-    .rightside {
-        padding-right: 0px;
-    }
+.floating {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.floating:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+  width: 280px;
+  max-width: 90vw;
+  padding: 0;
+  background-color: transparent;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .mainbox {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25rem; 
+    padding: 2rem;
+  }
+
+  .box {
+    width: 350px; 
+    max-width: 85vw;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mainbox {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7rem; 
+    padding: 2rem;
+  }
+
+  .box {
+    width: 350px; 
+    max-width: 85vw;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1280px) {
+  .mainbox {
+    align-items: center;
+    margin-top: 2rem; 
+    padding-bottom: 1rem;
+  }
+
+  .box {
+    width: 280px; 
+    max-width: 85vw;
+  }
+}
 </style>
