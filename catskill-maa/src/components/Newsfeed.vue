@@ -9,87 +9,109 @@ interface NewsItem {
   imagePosition: 'left' | 'right';
 }
 
+const upcomingCount = 0; //use this for upcoming events
+
 const newsItems = ref<NewsItem[]>([
   {
-    title: 'CMAA Team competes at',
-    description: 'CMAA competed at blah blah blah. Everyone came home with medals, Rankings:',
-    image: 'https://via.placeholder.com/64',
+    title: 'CMAA annual yard sale a huge success!',
+    description: 'CMAA hosted its annual yard sale this past memorial day weekend, fundraising for their upcoming tournaments.Thank you to everyone who donated items and to all the volunteers who helped out',
+    image: '/image14.jpg',
     imagePosition: 'left',
   },
   {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'First plants and flowers planted at the new CMAA community garden',
+    description: 'The academy is excited to announce the first plants and flowers have been planted at the new community garden!',
+    image: '/image12.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Parents Night Out was a blast!',
+    description: 'Parents Night Out went great! All the kids enjoyed a night of games, snacks, and the newest Sonic movie.',
+    image: '/image13.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Congratulations to our beginner teenagers who tested today!',
+    description: 'Our beginner teenagers did an amazing job testing today. They showed great focus and determination, and we are so proud of their progress.',
+    image: '/image3.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Congratulations to our intermediate class who tested today!',
+    description: 'Round of applause for all of our intermediate students who were promoted! Their dedication and hard work have truly paid off.',
+    image: '/image2.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Students took home medals at the New Britain TSD Tournament!',
+    description: 'Amazing job to all of our students who competed at todays tournament!',
+    image: '/image6.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Congrats to our new black belts and master belts who tested today!',
+    description: 'We are so proud of our students who tested for black belt(Anaiah and Maggie) and master belt(Edwin Morales, John Hill, and Craig Hazelnis) today. Thank you to the grandmasters and masters who came to support our graduates.',
+    image: '/image1.jpg',
     imagePosition: 'left',
   },
     {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'CMAA represented extremely well at the Trinity Invitational TSD Tournament!',
+    description: 'Round of applause for all of our students who competed at the Trinity Invitational TSD Tournament! We are so proud of you all!',
+    image: '/image7.jpg',
     imagePosition: 'left',
   },
    {
-    title: 'Beginner Testing a HUGE Success',
-    description: 'Round of applause for everyone who tested today!',
-    image: 'https://via.placeholder.com/64',
+    title: 'Marched in the 2025 Jeffersonville Parade!',
+    description: 'Great job to all of our students who participated and marched in the parade!',
+    image: '/image8.jpg',
+    imagePosition: 'left',
+  },
+  {
+    title: 'Maggie and Mr.Morales proudly represents CMAA and the 2025 Cowabunga Classic',
+    description: 'Maggie and Mr.Morales proudly represented CMAA at the 2025 Cowabunga Classic! They both did amazing jobs in their divisions.',
+    image: '/image10.jpg',
+    imagePosition: 'left',
+  },
+  {
+    title: 'Students particpated in the community Pokemon Club.',
+    description: 'Everyone had a great time at the local Pokemon Club hosted by an academy black belt!',
+    image: '/image11.jpg',
     imagePosition: 'left',
   },
 ]);
 </script>
 
 <template>
-<div class="box">
-  <aside class="menu newsfeed">
-    <div v-for="(item, index) in newsItems" :key="index" class="media mb-4">
-      <figure
-        :class="['media-' + (item.imagePosition === 'left' ? 'left' : 'right')]"
+  <div class="box">
+    <aside class="menu newsfeed">
+      <h3 class="section-title">Upcoming Events</h3>
+
+      <div
+        v-for="(item, index) in newsItems"
+        :key="index"
       >
-        <p class="image is-64x64">
-          <img :src="item.image" alt="News image" />
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>{{ item.title }}</strong>
-            <br />
-            {{ item.description }}
-          </p>
+        <div v-if="index === upcomingCount" class="section-divider">
+          <h3 class="section-title">Past Events</h3>
+        </div>
+
+        <div class="media mb-4">
+          <figure :class="['media-' + item.imagePosition]">
+            <p class="image is-128x128">
+              <img :src="item.image" alt="News image" />
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{ item.title }}</strong><br />
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </aside>
-</div>
+    </aside>
+  </div>
 </template>
 
 <style scoped>
@@ -106,6 +128,16 @@ const newsItems = ref<NewsItem[]>([
     padding-right: 0px;
 }
 
+.section-divider {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #ccc;
+}
 
-
+.section-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
 </style>

@@ -46,7 +46,7 @@
     padding-bottom: 12px;
 }
 .container {
-    padding-top: 110px;
+    padding-top: 115px;
 }
 .founder-block {
   margin-bottom: 2rem;

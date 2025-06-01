@@ -3,10 +3,15 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
 const options = {
   type: 'loop',
-  perPage: 3,
-  gap: '1rem',
   autoplay: true,
   pauseOnHover: true,
+  gap: '1rem',
+  perPage: 3,
+  autoHeight: true,
+  breakpoints: {
+    1024: { perPage: 2 },
+    640: { perPage: 1 },
+  },
 };
 </script>
 
