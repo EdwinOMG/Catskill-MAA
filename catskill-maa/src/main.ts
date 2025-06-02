@@ -9,6 +9,9 @@ import router from './router'
 
 const app = createApp(App)
 
+const goToSection = () => {
+     router.push({ path: '/#contact' });
+   };
 
 app.use(router)
 app.mount('#app')

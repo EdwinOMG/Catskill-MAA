@@ -26,22 +26,21 @@ const toggleMenu = () => {
 
   <div class="navbar-menu menu2"  v-bind:class="{'is-active': isOpen}">
     <div class="navbar-start menu2">
-      <router-link to="/" class="navbar-item"> Home </router-link>
+      <router-link to="/" class="navbar-item">Home</router-link>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" > About </a>
+        <a class="navbar-link" >About</a>
 
         
         <div class="navbar-dropdown is-boxed">
-        <router-link to="/founders" class="dropitem navbar-item"> Our Founders </router-link>
-         <router-link to="/Team" class="dropitem navbar-item"> Our Team </router-link>
-          <hr class="navbar-divider">
-          <a class="dropitem navbar-item"> Programs </a>
-          <router-link to="/Media" class="dropitem navbar-item is-selected"> Media </router-link>
-          <a class="dropitem navbar-item"> Quiz(maybe) </a>
+        <router-link to="/founders" class="dropitem navbar-item">Our Founders</router-link>
+        <hr class="navbar-divider">
+         <router-link to="/Team" class="dropitem navbar-item">Our Team</router-link>
         </div>
       </div>
-        <a class="navbar-item"> Events </a>
-        <router-link to="/Contact" class="navbar-item"> Contact </router-link>
+        <router-link to="/Media" class="navbar-item">Media</router-link>
+        <router-link to="/Programs" class="navbar-item">Programs</router-link>
+
+        <router-link to="/#contact" class="navbar-item">Contact</router-link>
 
     </div>
 
@@ -49,7 +48,7 @@ const toggleMenu = () => {
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <router-link to="/Contact" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
+            <router-link to="/#contact" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
               <span> Join Now! </span>
             </router-link>
           </p>

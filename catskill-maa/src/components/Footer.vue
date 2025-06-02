@@ -68,12 +68,14 @@
                 </div>
             </div>
         </div>
-        <div class="content has-text-centered">
-            <p class="has-text-white">© 2023 Catskill Martial Arts Academy. All rights reserved.</p>
-        </div>
+        
     </footer>
 </template>
 
 <style scoped>
-
+.footer {
+    padding-bottom: 0px;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #000; /* Black text */
+}
 </style>

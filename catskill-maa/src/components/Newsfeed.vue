@@ -124,8 +124,8 @@ const newsItems = ref<NewsItem[]>([
 } 
 .box {
     margin-top: 130px;
-    width: 80%;
-    padding-right: 0px;
+    width: 90%;
+    margin-right: 20px;
 }
 
 .section-divider {

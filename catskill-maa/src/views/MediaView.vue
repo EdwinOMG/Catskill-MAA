@@ -8,12 +8,12 @@ import Newsfeed from '@/components/Newsfeed.vue';
     <div class="container">
      <div class="columns is-multiline">
         <!-- Facebook Page Plugin -->
-        <div class="column is-full-mobile is-half-tablet is-3  ">
+        <div class="column is-3">
           <Pagegallery />
         </div>
 
         <!-- Newsfeed -->
-        <div class="column is-full-mobile is-half-tablet is-9">
+        <div class="column is-desktop-5 ">
           <Newsfeed />
         </div>
       </div>
@@ -24,8 +24,5 @@ import Newsfeed from '@/components/Newsfeed.vue';
 
 <style scoped>
 
-.gallery {
-    margin-top: 80px;
-    
-}
+
 </style>

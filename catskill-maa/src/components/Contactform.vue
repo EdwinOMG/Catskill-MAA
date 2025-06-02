@@ -31,7 +31,7 @@ export default {
 
         if (response.ok) {
           alert('Form submitted successfully!');
-          // Reset form fields
+          // reset form fields
           this.form.name = '';
           this.form.email = '';
           this.form.number = '';
@@ -51,7 +51,11 @@ export default {
 
 <template>
     <div class="container">
-       
+       <div class="title is-2">Contact Us!</div>
+        <div class="title is-4">Questions?</div>
+        <div class="subtitle is-6">Email us at catskillmaa@yahoo.com or give us a call at (000)-000-0000</div>
+        <div class="title is-4">Interested in trying a class?</div>
+         <div class="subtitle is-6">Fill out the form below and we'll get you on our schedule!</div>
     <form @submit.prevent="handleSubmit">
 <div class="columns is-multiline">
         <div class="column is-half">
@@ -131,13 +135,16 @@ export default {
 <style scoped>
 .title {
     text-align: center;
+    padding-bottom: 25px;
 }
 .subtitle {
     text-align: center;
-    
+    padding-bottom: 50px;
 }
 .container {
-  margin-top: 110px;
-  padding-bottom: 50px;
+  margin-top: 10px;
+  padding-bottom: 30px;
 }
+
+
 </style>
