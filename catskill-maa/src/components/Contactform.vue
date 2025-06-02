@@ -51,13 +51,13 @@ export default {
 
 <template>
     <div class="container">
-       <div class="title is-2">Contact Us!</div>
+       <div class="title mainTitle is-2">Contact Us!</div>
         <div class="title is-4">Questions?</div>
         <div class="subtitle is-6">Email us at catskillmaa@yahoo.com or give us a call at (000)-000-0000</div>
-        <div class="title is-4">Interested in trying a class?</div>
-         <div class="subtitle is-6">Fill out the form below and we'll get you on our schedule!</div>
-    <form @submit.prevent="handleSubmit">
-<div class="columns is-multiline">
+        <div class="title is-4">Interested in trying a free class?</div>
+         <div class="subtitle bottomsub is-6">Fill out the form below and we'll get you on our schedule!</div>
+<form @submit.prevent="handleSubmit">
+<div class="form columns is-multiline">
         <div class="column is-half">
           <div class="field">
             <label class="label">Full Name</label>
@@ -133,6 +133,13 @@ export default {
 </template>
 
 <style scoped>
+.form {
+    padding-top: 0px;   
+}
+.mainTitle {
+    padding-bottom: 0px!important;
+    
+}
 .title {
     text-align: center;
     padding-bottom: 25px;
@@ -142,9 +149,11 @@ export default {
     padding-bottom: 50px;
 }
 .container {
-  margin-top: 10px;
+  margin-top: 0px;
   padding-bottom: 30px;
 }
 
-
+.bottomsub {
+    padding-bottom: 0px!important;
+}
 </style>

@@ -71,14 +71,12 @@ function viewCard() {
         :class="{ flip: item.flip }"
         @click="letsFlip(item)"
       >
-        <!-- Front -->
         <figure class="front">
           <img :src="item.image" alt="Profile Image" class="full-image" />
         </figure>
 
         <figure class="back">
   <div class="card-back">
-    <!-- Top Divider Area -->
     <div class="card-back-top">
       <div class="top-column left">
         <img :src="item.avatar" alt="Avatar" class="small-avatar" />
@@ -87,7 +85,6 @@ function viewCard() {
       <div class="top-column right"></div>
     </div>
 
-    <!-- Bottom Profile Info Area -->
     <div class="card-back-bottom">
       <p class="name">{{ item.name }}</p>
       <p class="role">{{ item.role }}</p>

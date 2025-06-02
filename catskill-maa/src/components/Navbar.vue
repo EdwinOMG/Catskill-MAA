@@ -40,7 +40,7 @@ const toggleMenu = () => {
         <router-link to="/Media" class="navbar-item">Media</router-link>
         <router-link to="/Programs" class="navbar-item">Programs</router-link>
 
-        <router-link to="/#contact" class="navbar-item">Contact</router-link>
+        <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>
 
     </div>
 
@@ -48,7 +48,8 @@ const toggleMenu = () => {
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <router-link to="/#contact" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
+            
+            <router-link :to="{ path: '/', hash: '#contact' }" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
               <span> Join Now! </span>
             </router-link>
           </p>
