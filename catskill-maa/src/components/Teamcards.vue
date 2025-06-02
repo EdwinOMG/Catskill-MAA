@@ -1,0 +1,257 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+interface Post {
+  id: number
+  flip: boolean
+  avatar: string
+  image: string
+  name: string
+  ssn: string
+  role: string
+}
+
+const posts = ref<Post[]>([
+  {
+    id: 1,
+    flip: false,
+    avatar: '/Edwin.png',
+    image: '/Edwin.png',
+    name: 'Edwin Morales Jr',
+    ssn: '4th Dan Master Belt',
+    role: 'Instructor',
+  },
+  {
+    id: 2,
+    flip: false,
+    avatar: '/Donald.png',
+    image: '/Donald.png',
+    name: 'Donald Belsito',
+    ssn: '8th Dan Grand Master',
+    role: 'Head Instructor',
+  },
+  {
+    id: 3,
+    flip: false,
+    avatar: '/Anaiah.png',
+    image: '/Anaiah.png',
+    name: 'Anaiah Santiago',
+    ssn: '1st Dan Black Belt',
+    role: 'Assistant Instructor',
+  },
+])
+
+function letsFlip(item: Post) {
+  posts.value.forEach((post) => {
+    if (post.id !== item.id) {
+      post.flip = false
+    }
+  })
+  setTimeout(() => {
+    item.flip = !item.flip
+  }, 100)
+}
+
+function viewCard() {
+  alert('View card!')
+}
+</script>
+
+<template>
+ <div class="cardbox">
+ <div class="title is-1 has-text-centered">Meet Our Team</div>
+  <div class="columns is-multiline is-centered">
+    <div
+      v-for="item in posts"
+      :key="item.id"
+      class="column is-one-third"
+    >
+      <div
+        class="flipper"
+        :class="{ flip: item.flip }"
+        @click="letsFlip(item)"
+      >
+        <!-- Front -->
+        <figure class="front">
+          <img :src="item.image" alt="Profile Image" class="full-image" />
+        </figure>
+
+        <figure class="back">
+  <div class="card-back">
+    <!-- Top Divider Area -->
+    <div class="card-back-top">
+      <div class="top-column left">
+        <img :src="item.avatar" alt="Avatar" class="small-avatar" />
+      </div>
+      <div class="top-column center"></div>
+      <div class="top-column right"></div>
+    </div>
+
+    <!-- Bottom Profile Info Area -->
+    <div class="card-back-bottom">
+      <p class="name">{{ item.name }}</p>
+      <p class="role">{{ item.role }}</p>
+    </div>
+  </div>
+</figure>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<style scoped>
+
+.cardbox {
+    margin-top: 120px;
+}
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  height: 80vh;
+}
+
+.column {
+  flex: 1 0 33.33%;
+  max-width: 33.33%;
+  padding: 0;
+  box-sizing: border-box;
+  border: 3px solid black;
+}
+
+.flipper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flipper.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+}
+
+.is-centered-ver-hor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px #9e9e9e;
+}
+
+@media (max-width: 768px) {
+  .column {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .column {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}
+
+.card-back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back-top {
+  flex: 1;
+  display: flex;
+  background: url('/your-collage.jpg') center/cover no-repeat;
+}
+
+.top-column {
+  flex: 1;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-column:last-child {
+  border-right: none;
+}
+
+.small-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.card-back-bottom {
+  flex: 2;
+  background-color: #333333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+</style>

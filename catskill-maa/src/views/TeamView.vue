@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Teamselect from '@/components/Teamselect.vue';
+import Teamcards from '@/components/Teamcards.vue';
 </script>
 
 <template>
-    <div>
-<Teamselect />
-    </div>
+<div>
+    <Teamcards />
+</div>
 </template>
 
 <style scoped>

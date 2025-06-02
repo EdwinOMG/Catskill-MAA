@@ -19,7 +19,7 @@ const newsItems = ref<NewsItem[]>([
     imagePosition: 'left',
   },
   {
-    title: 'First plants and flowers planted at the new CMAA community garden',
+    title: 'First vegetables and flowers planted at the new CMAA community garden',
     description: 'The academy is excited to announce the first plants and flowers have been planted at the new community garden!',
     image: '/image12.jpg',
     imagePosition: 'left',
