@@ -5,16 +5,16 @@
 <template>
   <div class="mainbox">
     <div class="floating box hover-underline">
-      <img src="/image1.jpg" alt="Image 1" />
+      <img src="/media/image1.jpg" alt="Image 1" />
     </div>
     <div class="floating box hover-underline">
-      <img src="/image2.jpg" alt="Image 2" />
+      <img src="/media/image2.jpg" alt="Image 2" />
     </div>
     <div class="floating box hover-underline">
-      <img src="/image3.jpg" alt="Image 3" />
+      <img src="/media/image3.jpg" alt="Image 3" />
     </div>
     <div class="floating box hover-underline">
-      <img src="/image4.jpg" alt="Image 4" />
+      <img src="/media/image4.jpg" alt="Image 4" />
     </div>
   </div>
 </template>

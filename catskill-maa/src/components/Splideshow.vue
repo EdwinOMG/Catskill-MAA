@@ -17,8 +17,8 @@ const options = {
 
 <template>
   <Splide :options="options" aria-label="Vue Splide Carousel">
-    <SplideSlide v-for="n in 4" :key="n">
-      <img :src="`/image${n}.jpg`" :alt="`Image ${n}`" />
+    <SplideSlide v-for="n in 8" :key="n">
+      <img :src="`/rotation/image${n}.jpg`" :alt="`Image ${n}`" />
     </SplideSlide>
   </Splide>
 </template>
@@ -31,7 +31,8 @@ const options = {
 }
 img {
   width: 100%;
-  height: auto;
+  height: 300px; 
+  object-fit: cover;
   border-radius: 8px;
 }
 </style>

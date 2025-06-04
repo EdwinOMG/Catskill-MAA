@@ -8,7 +8,7 @@
 <div class="founder-block">
   <div class="media is-align-items-center">
     <figure class="media-left image is-128x128">
-      <img src="/donaldbelsito.jpg" alt="Donald Belsito" />
+      <img src="/people/donaldbelsito.jpg" alt="Donald Belsito" />
     </figure>
     <div class="media-content">
       <h1 class="title nametitle has-text-black">Donald Belsito</h1>
@@ -33,7 +33,7 @@
       </p>
     </div>
     <figure class="media-right image is-128x128 ml-4">
-      <img src="/walterbelsito.png" alt="Walter Belsito" />
+      <img src="/people/walterbelsito.png" alt="Walter Belsito" />
     </figure>
   </div>
 </div>

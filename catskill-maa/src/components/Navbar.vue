@@ -25,24 +25,27 @@ const toggleMenu = () => {
   </div>
 
   <div class="navbar-menu menu2"  v-bind:class="{'is-active': isOpen}">
-    <div class="navbar-start menu2">
-      <router-link to="/" class="navbar-item">Home</router-link>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" >About</a>
+    <div class="navbar-start">
+  <router-link to="/" class="navbar-item">Home</router-link>
 
-        
-        <div class="navbar-dropdown is-boxed">
-        <router-link to="/founders" class="dropitem navbar-item">Our Founders</router-link>
-        <hr class="navbar-divider">
-         <router-link to="/Team" class="dropitem navbar-item">Our Team</router-link>
-        </div>
-      </div>
-        <router-link to="/Media" class="navbar-item">Media</router-link>
-        <router-link to="/Programs" class="navbar-item">Programs</router-link>
-
-        <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>
-
+  <!-- Only show in desktop -->
+  <div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
+    <a class="navbar-link">About</a>
+    <div class="navbar-dropdown is-boxed">
+      <router-link to="/founders" class="dropitem navbar-item">Our Founders</router-link>
+      <hr class="navbar-divider">
+      <router-link to="/Team" class="dropitem navbar-item">Our Team</router-link>
     </div>
+  </div>
+
+  <!-- Only show in mobile -->
+  <router-link to="/founders" class="navbar-item is-hidden-desktop">Our Founders</router-link>
+  <router-link to="/Team" class="navbar-item is-hidden-desktop">Our Team</router-link>
+
+  <router-link to="/Media" class="navbar-item">Media</router-link>
+  <router-link to="/Programs" class="navbar-item">Programs</router-link>
+  <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>
+</div>
 
     <div class="navbar-end">
       <div class="navbar-item">
@@ -64,6 +67,12 @@ const toggleMenu = () => {
 <style scoped lang="scss">
 
 @use '../../catskill-maa.scss' as *;
+
+@media screen and (max-width: 1024px) {
+  .navbar-menu {
+    background-color: $white !important;
+  }
+}
 
 .navbar-item img {
   height: 100%;
