@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-
+import Requestbutton from '../components/Requestmodal.vue'
 const isOpen = ref(false)
 const isScrolled = ref(false)
 
@@ -20,8 +20,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-   <nav class="navbar is-fixed-top" scrolled: isScrolled>
-  <div class="navbar-brand">
+    <nav :class="['navbar is-fixed-top', { scrolled: isScrolled }]">  
+      <div class="navbar-brand">
     <a class="logo-link" v-if="!isScrolled" href="/">
       <img src="/logos/logo.png" alt="Catskill MAA Logo">
     </a>
@@ -55,11 +55,7 @@ onUnmounted(() => {
       <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>
 
       <div class="navbar-item">
-        <div class="buttons">
-          <router-link :to="{ path: '/', hash: '#contact' }" class="trial-but btn btn-swipe-left btn-swipe-left--black button">
-            <span> Join Now! </span>
-          </router-link>
-        </div>
+        <Requestbutton />
       </div>
     </div>
   </div>
@@ -91,7 +87,6 @@ onUnmounted(() => {
       flex-direction: column;
     }
 
-    @window
   }
 
   &-end {
@@ -102,9 +97,11 @@ onUnmounted(() => {
       justify-content: flex-start;
     }
   }
-  &.scrolled {
-
-  }
+}
+.navbar.scrolled {
+  background-color: whitesmoke;
+  transition: background-color 0.3s ease;
+  height: 20px;
 }
 
 

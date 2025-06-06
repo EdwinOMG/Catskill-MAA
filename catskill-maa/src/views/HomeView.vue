@@ -16,7 +16,6 @@ import Requestmodal from '@/components/Requestmodal.vue';
       <Homebox />
   </section>
   <section>
-    <Requestmodal />
   </section>
   <section id="contact">
     <Contact />
