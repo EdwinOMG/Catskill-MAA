@@ -5,6 +5,7 @@ import Splideshow from '../components/Splideshow.vue';
 import Map from '../components/Map.vue'
 import Cards from '../components/Cards.vue'
 import Contact from '../components/Contactform.vue'
+import Requestmodal from '@/components/Requestmodal.vue';
 </script>
 
 <template>
@@ -15,7 +16,7 @@ import Contact from '../components/Contactform.vue'
       <Homebox />
   </section>
   <section>
-    <Cards />
+    <Requestmodal />
   </section>
   <section id="contact">
     <Contact />

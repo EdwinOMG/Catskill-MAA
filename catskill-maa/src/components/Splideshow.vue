@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
 
 const options = {
@@ -26,7 +26,7 @@ const options = {
 <style scoped lang="scss">
 @use '../../catskill-maa.scss' as *;
 .splide {
-  padding-top: 120px;
+  padding-top: 180px;
   width: auto;
 }
 img {

@@ -1,50 +1,43 @@
+<script setup lang="ts">
+import { reactive } from 'vue';
 
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        number: '',
-        message: '',
-        program: ''
-      }
-    };
-  },
-  methods: {
-    async handleSubmit() {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbw5cxSl3jyd33_LoCdr6bvWVj6xDW1y2iPmN7_Evf5RTlB8rwkGgNe88LjwKXRkhoZwcQ/exec';
-      const formData = new FormData();
+const form = reactive({
+  name: '',
+  email: '',
+  number: '',
+  message: '',
+  program: ''
+});
 
-      formData.append('Name', this.form.name);
-      formData.append('Email', this.form.email);
-      formData.append('Number', this.form.number);
-      formData.append('Message', this.form.message);
-      formData.append('Program', this.form.program);
+const handleSubmit = async () => {
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw5cxSl3jyd33_LoCdr6bvWVj6xDW1y2iPmN7_Evf5RTlB8rwkGgNe88LjwKXRkhoZwcQ/exec';
+  const formData = new FormData();
 
-      try {
-        const response = await fetch(scriptURL, {
-          method: 'POST',
-          body: formData
-        });
+  formData.append('Name', form.name);
+  formData.append('Email', form.email);
+  formData.append('Number', form.number);
+  formData.append('Message', form.message);
+  formData.append('Program', form.program);
 
-        if (response.ok) {
-          alert('Form submitted successfully!');
-          // reset form fields
-          this.form.name = '';
-          this.form.email = '';
-          this.form.number = '';
-          this.form.message = '';
-          this.form.program = '';
-        } else {
-          alert('There was a problem submitting the form.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('There was an error submitting the form.');
-      }
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (response.ok) {
+      alert('Form submitted successfully!');
+      form.name = '';
+      form.email = '';
+      form.number = '';
+      form.message = '';
+      form.program = '';
+    } else {
+      alert('There was a problem submitting the form.');
     }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('There was an error submitting the form.');
   }
 };
 </script>
