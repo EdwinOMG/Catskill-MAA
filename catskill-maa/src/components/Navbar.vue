@@ -36,20 +36,12 @@ onUnmounted(() => {
   <div class="navbar-menu menu2" :class="{ 'is-active': isOpen }">
     <div class="navbar-end w-full is-flex is-justify-content-flex-end is-align-items-center">
 
-<div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
-  <a class="navbar-link">Programs</a>
-  <div class="navbar-dropdown is-boxed">
-    <router-link to="/Programs" class="dropitem navbar-item">All Programs</router-link>
-    <hr class="navbar-divider">
-    <router-link to="/founders" class="dropitem navbar-item">Our Founders</router-link>
-    <router-link to="/Team" class="dropitem navbar-item">Our Team</router-link>
-  </div>
-</div>
 
-<router-link to="/Programs" class="navbar-item is-hidden-desktop">All Programs</router-link>
+<router-link to="/Programs" class="navbar-item is-hidden-desktop">Programs</router-link>
 <router-link to="/founders" class="navbar-item is-hidden-desktop">Our Founders</router-link>
 <router-link to="/Team" class="navbar-item is-hidden-desktop">Our Team</router-link>
 
+<router-link to="/Programs" class="navbar-item">Programs</router-link>
 <router-link to="/about" class="navbar-item">About</router-link>
       <router-link to="/Media" class="navbar-item">Media</router-link>
       <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>

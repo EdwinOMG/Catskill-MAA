@@ -59,7 +59,7 @@ function viewCard() {
 
 <template>
  <div class="cardbox">
- <div class="title is-1 has-text-centered">Meet Our Team</div>
+ <div class="title is-1 has-text-centered">Our Instructors</div>
   <div class="columns is-multiline is-centered">
     <div
       v-for="item in posts"
@@ -110,7 +110,8 @@ function viewCard() {
   padding: 0;
   margin: 0;
   gap: 0;
-  height: 80vh;
+  height: 50vh;
+  padding-bottom: 30px;
 }
 
 .column {
@@ -118,7 +119,8 @@ function viewCard() {
   max-width: 33.33%;
   padding: 0;
   box-sizing: border-box;
-  border: 3px solid black;
+  padding: 5px;
+  
 }
 
 .flipper {
