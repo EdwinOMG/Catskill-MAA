@@ -58,8 +58,10 @@ function viewCard() {
 </script>
 
 <template>
+  <div class="box">
  <div class="cardbox">
- <div class="title is-1 has-text-centered">Our Instructors</div>
+ <div class="title has-text-centered">Our Instructors</div>
+  <h2 class="subtitle">(Click to learn more)</h2>
   <div class="columns is-multiline is-centered">
     <div
       v-for="item in posts"
@@ -94,13 +96,42 @@ function viewCard() {
       </div>
     </div>
   </div>
+</div>  
 </div>
 </template>
 
 <style scoped>
 
+.box {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 0px;
+    margin-bottom: 30px;
+    background-color: aliceblue;  
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    color: black;
+    
+}
+.subtitle{ 
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding-bottom: 0px;
+    margin-top: 50px;
+    color: black;
+}
 .cardbox {
-    margin-top: 120px;
+  padding-top: 20px;
+    margin-top: 50px;
 }
 .columns {
   display: flex;
@@ -111,7 +142,6 @@ function viewCard() {
   margin: 0;
   gap: 0;
   height: 50vh;
-  padding-bottom: 30px;
 }
 
 .column {

@@ -6,6 +6,7 @@ import Map from '../components/Map.vue'
 import Cards from '../components/Cards.vue'
 import Contact from '../components/Contactform.vue'
 import Requestmodal from '@/components/Requestmodal.vue';
+import Reviews from '@/components/Reviews.vue';
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import Requestmodal from '@/components/Requestmodal.vue';
       <Homebox />
   </section>
   <section>
+    <Reviews />
   </section>
   <section id="contact">
     <Contact />

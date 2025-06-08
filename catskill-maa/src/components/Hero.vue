@@ -16,8 +16,9 @@
 <style scoped>
 .hero {
   position: relative;
-  height: 500px; /* adjust as needed */
+  height: 400px; /* adjust as needed */
   overflow: hidden;
+  margin-top: 150px;
 }
 
 .hero-body-wrapper {
