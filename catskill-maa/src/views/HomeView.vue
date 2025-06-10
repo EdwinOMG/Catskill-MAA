@@ -7,9 +7,23 @@ import Cards from '../components/Cards.vue'
 import Contact from '../components/Contactform.vue'
 import Requestmodal from '@/components/Requestmodal.vue';
 import Reviews from '@/components/Reviews.vue';
+import Popmodal from '@/components/Popmodal.vue';
+import { onMounted, ref  } from 'vue';
+
+const showModal = ref(false);
+
+  onMounted(() => {
+    setTimeout(() => {
+      showModal.value = true;
+    }, 1500); 
+        
+
+  });
+  
 </script>
 
 <template>
+  <Popmodal :show="showModal" @close="showModal = false" />
   <section>
       <Splideshow />
   </section>

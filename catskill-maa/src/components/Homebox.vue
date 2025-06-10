@@ -11,22 +11,24 @@
         and challenging environment where you can grow physically and mentally. Our experienced instructors are commited to preserving 
         the values of Tang Soo Do while helping each student build confidence, focus, and strength.
     </p>
+
   </div>
 </template>
 
-<style scoped lang="scss">
-@use '../../catskill-maa.scss' as *;
+<style scoped>
 
 
 .box {
   padding-top: 3rem;
   width: 85%;
-  height: 18rem;
+  height: 40%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  background-color: transparent;
+  background-color: aliceblue;
   padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  overflow-wrap: break-word;
 }
 
 .box-title {
@@ -36,11 +38,12 @@
   color: #363636;
   padding-top: 10px;
   font-size: 3rem!important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .paragraph {
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 </style>

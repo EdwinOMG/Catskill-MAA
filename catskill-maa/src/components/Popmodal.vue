@@ -1,7 +1,13 @@
 <script setup lang="ts">
-import { ref} from 'vue';
+import { ref } from 'vue';
 
-const showModal = ref(false);
+const props = defineProps<{
+  show: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'close'): void
+}>()
 
 const form = ref({
   name: '',
@@ -12,7 +18,7 @@ const form = ref({
 });
 
 function closeModal() {
-  showModal.value = false;
+  emit('close');
 }
 
 async function handleSubmit() {
@@ -47,12 +53,9 @@ async function handleSubmit() {
 
 <template>
   <div>
-    <!-- Trigger Button -->
-    <button class="button" @click="showModal = true">Request Information</button>
 
-    <!-- Modal -->
-    <div class="modal" :class="{ 'is-active': showModal }">
-      <div class="modal-background" @click="closeModal"></div>
+    <div class="modal" :class="{ 'is-active': props.show }">
+     <div class="modal-background" @click="closeModal"></div>
       <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Request Information</p>
