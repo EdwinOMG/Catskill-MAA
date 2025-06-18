@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import MediaView from '../views/MediaView.vue'
 import ProgramsView from '../views/ProgramsView.vue'
 import AboutView from '../views/AboutView.vue'
+import DragonsView from '../views/DragonsView.vue'
+import TeensView from '../views/TeensView.vue'
+import AdultsView from '../views/AdultsView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -25,6 +28,21 @@ const router = createRouter({
       path: '/Programs',
       name: 'Programs',
       component: ProgramsView,
+    },
+    {
+      path: '/DragonProgram',
+      name: 'DragonProgram',
+      component: DragonsView,
+    },
+    {
+      path: '/TeenProgram',
+      name: 'TeenProgram',
+      component: TeensView,
+    },
+    {
+      path: '/AdultProgram',
+      name: 'AdultProgram',
+      component: AdultsView,
     },
      
   ],

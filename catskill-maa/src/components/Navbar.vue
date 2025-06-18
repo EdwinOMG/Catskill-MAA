@@ -37,14 +37,22 @@ onUnmounted(() => {
     <div class="navbar-end w-full is-flex is-justify-content-flex-end is-align-items-center">
 
 
-<router-link to="/Programs" class="navbar-item is-hidden-desktop">Programs</router-link>
-<router-link to="/founders" class="navbar-item is-hidden-desktop">Our Founders</router-link>
-<router-link to="/Team" class="navbar-item is-hidden-desktop">Our Team</router-link>
+<div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
+  <a class="navbar-link">Programs</a>
+  <div class="navbar-dropdown">
+    <router-link to="/DragonProgram" class="navbar-item">Kids Martial Arts</router-link>
+    <router-link to="/TeenProgram" class="navbar-item">Teen Martial Arts</router-link>
+    <router-link to="/AdultProgram" class="navbar-item">Adult Martial Arts</router-link>
+  </div>
+</div>
 
-<router-link to="/Programs" class="navbar-item">Programs</router-link>
-<router-link to="/about" class="navbar-item">About</router-link>
-      <router-link to="/Media" class="navbar-item">Media</router-link>
-      <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item">Contact</router-link>
+<!-- Mobile: Just a single "Programs" link -->
+<router-link to="/founders" class="navbar-item is-hidden-desktop" @click="isOpen = false">Our Founders</router-link>
+<router-link to="/Team" class="navbar-item is-hidden-desktop" @click="isOpen = false">Our Team</router-link>
+<router-link to="/Programs" class="navbar-item is-hidden-desktop" @click="isOpen = false">Programs</router-link>
+<router-link to="/about" class="navbar-item" @click="isOpen = false">About</router-link>
+<router-link to="/Media" class="navbar-item" @click="isOpen = false">Media</router-link>
+<router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item" @click="isOpen = false">Contact</router-link>
 
       <div class="navbar-item">
         <Requestbutton />
@@ -57,46 +65,100 @@ onUnmounted(() => {
 <style scoped>
 
 /* -------------------------
+   Navbar Dropdown Styles
+------------------------- */
+.navbar-dropdown .navbar-item {
+  background-color: white!important; 
+  color: black!important; 
+}
+
+.navbar-dropdown .navbar-item:hover {
+  background-color: deepskyblue;
+  color: white; 
+}
+
+/* -------------------------
    Navbar Base Styles
 ------------------------- */
-
 .navbar {
-  position: sticky;
-  top: 0;
+  position: relative;
+  z-index: 1001;  top: 0;
   background-color: transparent;
-  z-index: 1000;
-
-  &-brand {
-    flex: 1;
-  }
-
-  &-menu {
-    flex: 2;
-    justify-content: center;
-
-    @media screen and (max-width: 1024px) {
-      background-color: white !important;
-      flex-direction: column;
-    }
-
-  }
-
-  &-end {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-
-    @media screen and (max-width: 1024px) {
-      justify-content: flex-start;
-    }
-  }
+  transition: background-color 0.3s ease, height 0.3s ease;
 }
+
 .navbar.scrolled {
   background-color: whitesmoke;
+  height: auto;
   transition: background-color 0.3s ease;
-  height: 20px;
+
 }
 
+/* Navbar Brand */
+.navbar-brand {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
+/* Burger */
+.navbar-burger {
+  cursor: pointer;
+}
+
+.navbar-burger span {
+  background-color: #000;
+}
+
+/* Navbar Menu */
+.navbar-menu {
+  flex: 2;
+  justify-content: center;
+  transition: max-height 0.3s ease;
+}
+
+.navbar-end {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-menu.is-active {
+    position: fixed;
+    top: 3.25rem; /* height of the Bulma navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+
+  .navbar-end {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-item {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* -------------------------
+   Navbar Items
+------------------------- */
 .navbar-item {
   padding: 25px;
   text-align: center;
@@ -104,7 +166,6 @@ onUnmounted(() => {
   font-weight: bold;
   font-size: 0.9rem;
   position: relative;
-  
 
   &:hover {
     color: darkblue;
@@ -141,19 +202,11 @@ onUnmounted(() => {
     height: 100%;
     border-color: black;
   }
-
-  @media screen and (max-width: 1024px) {
-    justify-content: flex-start;
-    text-align: left;
-    width: 100%;
-  }
 }
-
 
 /* -------------------------
    Navbar Link Styles
 ------------------------- */
-
 .navbar-link {
   color: darkblue;
 
@@ -170,9 +223,8 @@ onUnmounted(() => {
 /* -------------------------
    Dropdown and Divider
 ------------------------- */
-
 .navbar-dropdown {
-  background-color: white;
+  background-color: white !important;
 }
 
 .navbar-divider {
@@ -187,19 +239,16 @@ onUnmounted(() => {
 /* -------------------------
    Logo Styling
 ------------------------- */
-
 .logo-link img {
-  max-height: 10rem; /* increase logo size */
+  max-height: 10rem;
   height: auto;
   width: auto;
   margin-left: 3rem;
 }
 
-
 /* -------------------------
    Buttons & Trial Button
 ------------------------- */
-
 .trial-but {
   background-color: darkblue;
   color: white;
@@ -210,13 +259,13 @@ onUnmounted(() => {
 
   &:hover {
     background-color: white !important;
+    color: darkblue;
   }
 }
 
 /* -------------------------
    Swipe Button Styles
 ------------------------- */
-
 .btn-swipe-left {
   display: block;
   overflow: hidden;
@@ -260,7 +309,7 @@ onUnmounted(() => {
     border: 2px solid rgb(51, 51, 51);
 
     &::before {
-      background-color: blue4;
+      background-color: #000;
     }
   }
 }
@@ -268,5 +317,4 @@ onUnmounted(() => {
 .btn:hover .btn-slide-show-text1 {
   margin-left: 65px;
 }
-
 </style>
