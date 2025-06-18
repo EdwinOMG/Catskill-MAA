@@ -15,8 +15,8 @@ const posts = ref<Post[]>([
   {
     id: 1,
     flip: false,
-    avatar: '/people/Edwin.png',
-    image: '/people/Edwin.png',
+    avatar: '/people/edwin.jpg',
+    image: '/people/edwin.jpg',
     name: 'Edwin Morales Jr',
     ssn: '4th Dan Master Belt',
     role: 'Instructor',
@@ -24,8 +24,8 @@ const posts = ref<Post[]>([
   {
     id: 2,
     flip: false,
-    avatar: '/people/Donald.png',
-    image: '/people/Donald.png',
+    avatar: '/people/belsito.jpg',
+    image: '/people/belsito.jpg',
     name: 'Donald Belsito',
     ssn: '8th Dan Grand Master',
     role: 'Head Instructor',
@@ -33,8 +33,8 @@ const posts = ref<Post[]>([
   {
     id: 3,
     flip: false,
-    avatar: '/people/Anaiah.png',
-    image: '/people/Anaiah.png',
+    avatar: '/people/anaiah.jpg',
+    image: '/people/anaiah.jpg',
     name: 'Anaiah Santiago',
     ssn: '1st Dan Black Belt',
     role: 'Assistant Instructor',
