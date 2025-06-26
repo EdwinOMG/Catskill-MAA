@@ -95,10 +95,8 @@ const newsItems = ref<NewsItem[]>([
         </div>
 
         <div class="media mb-4">
-          <figure :class="['media-' + item.imagePosition]">
-            <p class="image is-128x128">
-              <img :src="item.image" alt="News image" />
-            </p>
+          <figure :class="['media-' + item.imagePosition, 'news-image-container']">
+             <img :src="item.image" alt="News image" class="news-image" />
           </figure>
           <div class="media-content">
             <div class="content">
@@ -115,6 +113,22 @@ const newsItems = ref<NewsItem[]>([
 </template>
 
 <style scoped>
+.news-image-container {
+  width: 128px;
+  height: 128px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .menu {
   width: 100%;
   max-width: 100%; 

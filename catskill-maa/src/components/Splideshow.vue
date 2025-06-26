@@ -26,13 +26,35 @@ const options = {
 </template>
 
 <style scoped>
+
+::v-deep(.splide__arrow) {
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 75px;
+    
+}
+
+::v-deep(.splide__arrow:hover) {
+  color: white;
+  fill: white;
+}
+
+::v-deep(.splide__arrow svg) {
+  width: 30px;
+  height: 30px;
+  fill: black;
+}
+
 .splide {
   padding-top: 180px;
   width: auto;
 }
 img {
   width: 100%;
-  height: 300px; 
+  height: 350px; 
   object-fit: cover;
   border-radius: 25px;
   border: 3px solid black;

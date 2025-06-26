@@ -244,6 +244,7 @@ onUnmounted(() => {
   height: auto;
   width: auto;
   margin-left: 3rem;
+  margin-top: 30px;
 }
 
 /* -------------------------
