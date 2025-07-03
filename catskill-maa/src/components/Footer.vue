@@ -48,13 +48,13 @@
                 <div class="column is-3">
                     <h3 class="title is-5 has-text-black">Contact</h3>
                     <p class="has-text-black">Email: catskillmaa@yahoo.com</p>
-                    <p class="has-text-black">Phone: (123) 456-7890</p>
-                    <p class="has-text-black">address here womp womp</p>
+                    <p class="has-text-black">Phone: (845) 423-9497</p>
+                    <p class="has-text-black">1175 NY-52, Loch Sheldrake, NY</p>
                 </div>
                 <div class="column is-2">
                     <h3 class="title is-5 has-text-black">Follow us</h3>
                     <div class="buttons">
-                        <a class="button is-facebook" href="https://www.facebook.com/catskillmaa/">
+                        <a class="button is-facebook" href="https://www.facebook.com/Catskillmartialartsacademy">
                             <span class="icon">
                                 <i class="fab fa-facebook"></i>
                             </span>

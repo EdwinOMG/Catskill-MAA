@@ -19,7 +19,7 @@
 
 <style scoped>
 .box {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
     margin-top: 30px;

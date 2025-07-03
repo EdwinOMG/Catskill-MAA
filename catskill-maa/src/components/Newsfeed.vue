@@ -138,7 +138,7 @@ const newsItems = ref<NewsItem[]>([
 } 
 .box {
     margin-top: 130px;
-    width: 90%;
+    width: 100%;
     margin-right: 20px;
 }
 

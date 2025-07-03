@@ -4,7 +4,7 @@
 
 <template>
     <div class="top-bar">
-       Call us: (845) xxx-xxxx  | Email: catskillmaa@yahoo.com
+       Call us:  (845) 423-9497 | Email: catskillmaa@yahoo.com
     </div>
 </template>
 

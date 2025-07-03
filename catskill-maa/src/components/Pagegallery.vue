@@ -38,8 +38,8 @@ onMounted(() => {
 
 <style scoped>
 .box {
-  padding-left: 0px;
-  width: 20px;
+  
+  width: 290px;
   margin-top: 110px;
 }
 </style>

@@ -13,7 +13,7 @@ import Newsfeed from '@/components/Newsfeed.vue';
         </div>
 
         <!-- Newsfeed -->
-        <div class="column is-desktop-5 ">
+        <div class="column is-9 ">
           <Newsfeed />
         </div>
       </div>

@@ -46,7 +46,7 @@ const handleSubmit = async () => {
     <div class="container">
        <div class="title mainTitle is-2">Contact Us!</div>
         <div class="title is-4">Questions?</div>
-        <div class="subtitle is-6">Email us at catskillmaa@yahoo.com or give us a call at (000)-000-0000</div>
+        <div class="subtitle is-6">Email us at catskillmaa@yahoo.com or give us a call at (845) 423-9497</div>
         <div class="title is-4">Interested in trying a free class?</div>
          <div class="subtitle bottomsub is-6">Fill out the form below and we'll get you on our schedule!</div>
 <form @submit.prevent="handleSubmit">
