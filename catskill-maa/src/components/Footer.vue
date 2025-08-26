@@ -46,7 +46,8 @@
           <li><RouterLink to="/DragonProgram" class="has-text-blue">Dragon Program</RouterLink></li>
           <li><RouterLink to="/TeenProgram" class="has-text-blue">Teen Program</RouterLink></li>
           <li><RouterLink to="/AdultProgram" class="has-text-blue">Adult Program</RouterLink></li>
-          <li><RouterLink to="/contact" class="has-text-blue">Contact</RouterLink></li>
+          <li><RouterLink :to="{ path: '/', hash: '#contact' }" class="has-text-blue">Contact</RouterLink></li>
+
         </ul>
       </div>
 
@@ -81,8 +82,8 @@
 
 <style scoped>
 .footer {
-  background-color: #f0f8ff; /* Light blue background */
-  color: #000; /* Black text */
+  background-color: #f0f8ff; 
+  color: #000; 
   padding: 2rem 1.5rem;
 }
 
