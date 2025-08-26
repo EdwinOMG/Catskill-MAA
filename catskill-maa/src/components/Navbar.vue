@@ -38,7 +38,7 @@ onUnmounted(() => {
 
 
 <div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
-  <a class="navbar-link">Programs</a>
+  <a class="navbar-link is-block">Programs</a>
   <div class="navbar-dropdown">
     <router-link to="/DragonProgram" class="navbar-item">Kids Martial Arts</router-link>
     <router-link to="/TeenProgram" class="navbar-item">Teen Martial Arts</router-link>
@@ -46,11 +46,15 @@ onUnmounted(() => {
   </div>
 </div>
 
-<!-- Mobile: Just a single "Programs" link -->
-<router-link to="/founders" class="navbar-item is-hidden-desktop" @click="isOpen = false">Our Founders</router-link>
-<router-link to="/Team" class="navbar-item is-hidden-desktop" @click="isOpen = false">Our Team</router-link>
-<router-link to="/Programs" class="navbar-item is-hidden-desktop" @click="isOpen = false">Programs</router-link>
-<router-link to="/about" class="navbar-item" @click="isOpen = false">About</router-link>
+<!-- Mobile: individual links, hidden on desktop -->
+<div class="is-hidden-desktop">
+  <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Martial Arts</router-link>
+  <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teen Martial Arts</router-link>
+  <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adult Martial Arts</router-link>
+</div>
+
+<!-- Mobile: Just a single "Programs" link, NEED TO FIX ROUTES FOR MOBILE -->
+<router-link to="/About" class="navbar-item" @click="isOpen = false">About</router-link>
 <router-link to="/Media" class="navbar-item" @click="isOpen = false">Media</router-link>
 <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item" @click="isOpen = false">Contact</router-link>
 
@@ -203,6 +207,14 @@ onUnmounted(() => {
     border-color: black;
   }
 }
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
 
 /* -------------------------
    Navbar Link Styles
