@@ -80,7 +80,7 @@ const options = {
 }
 img {
   width: 100%;
-  height: 350px; 
+  aspect-ratio: 16 / 12;
   object-fit: cover;
   border-radius: 25px;
   border: 3px solid black;

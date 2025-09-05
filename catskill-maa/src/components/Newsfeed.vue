@@ -136,7 +136,7 @@ const newsItems = ref<NewsItem[]>([
 
 .news-image {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16/9;
   object-fit: cover;
 }
 

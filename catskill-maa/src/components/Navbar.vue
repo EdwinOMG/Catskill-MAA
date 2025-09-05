@@ -253,7 +253,7 @@ onUnmounted(() => {
 ------------------------- */
 .logo-link img {
   max-height: 10rem;
-  height: auto;
+  aspect-ratio: 16/9;
   width: auto;
   margin-left: 3rem;
   margin-top: 30px;

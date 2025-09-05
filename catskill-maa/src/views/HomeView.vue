@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import Hero from '../components/Hero.vue'
 import Homebox from '../components/Homebox.vue'
 import Splideshow from '../components/Splideshow.vue';
 import Map from '../components/Map.vue'
-import Cards from '../components/Cards.vue'
 import Contact from '../components/Contactform.vue'
-import Requestmodal from '@/components/Requestmodal.vue';
 import Reviews from '@/components/Reviews.vue';
 import Popmodal from '@/components/Popmodal.vue';
 import { onMounted, ref  } from 'vue';
