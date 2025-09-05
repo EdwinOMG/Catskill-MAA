@@ -10,11 +10,11 @@ import Aboutbox from '@/components/Aboutbox.vue';
   </section>
 
   <section class="about-section">
-    <img src="/logos/logo.png" alt="Logo" class="side-img left-img" />
+    <img src="/logos/logo.webp" alt="Logo" class="side-img left-img" />
     
     <Aboutbox />
 
-    <img src="/logos/bisang.png" alt="Bisang" class="side-img right-img" />
+    <img src="/logos/bisang.webp" alt="Bisang" class="side-img right-img" />
   </section>
 
   <section>
