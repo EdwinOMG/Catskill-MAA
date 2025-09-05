@@ -19,11 +19,33 @@ const options = {
 <template>
   <Splide :options="options" aria-label="Image Carousel">
     <SplideSlide v-for="n in 8" :key="n">
-     <img
-  src="/rotation/image1.webp?nf_resize=fit&w=800"
-  srcset="/rotation/image1.webp?nf_resize=fit&w=400 400w, /rotation/image1.webp?nf_resize=fit&w=800 800w, /rotation/image1.webp?nf_resize=fit&w=1200 1200w"
-  sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-  alt="Image 1"
+      <img
+  v-if="n === 1"
+  :src="`/rotation/image${n}.webp`"
+  :srcset="`
+    /rotation/image${n}.webp 400w,
+    /rotation/image${n}.webp 800w,
+    /rotation/image${n}.webp 1200w
+  `"
+  sizes="(max-width: 600px) 400px,
+         (max-width: 1200px) 800px,
+         1200px"
+  :alt="`Image ${n}`"
+/>
+
+<img
+  v-else
+  :src="`/rotation/image${n}.webp`"
+  :srcset="`
+    /rotation/image${n}.webp 400w,
+    /rotation/image${n}.webp 800w,
+    /rotation/image${n}.webp 1200w
+  `"
+  sizes="(max-width: 600px) 400px,
+         (max-width: 1200px) 800px,
+         1200px"
+  :alt="`Image ${n}`"
+  loading="lazy"
 />
     </SplideSlide>
   </Splide>
