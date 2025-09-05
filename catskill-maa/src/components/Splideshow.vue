@@ -19,10 +19,21 @@ const options = {
 <template>
   <Splide :options="options" aria-label="Image Carousel">
     <SplideSlide v-for="n in 8" :key="n">
-      <img :src="`/rotation/image${n}.webp`" :alt="`Image ${n}`" />
+      <img
+        :src="`/rotation/image${n}.webp?nf_resize=fit&w=800`"
+        :srcset="`
+          /rotation/image${n}.webp?nf_resize=fit&w=400 400w,
+          /rotation/image${n}.webp?nf_resize=fit&w=800 800w,
+          /rotation/image${n}.webp?nf_resize=fit&w=1200 1200w
+        `"
+        sizes="(max-width: 600px) 400px,
+               (max-width: 1200px) 800px,
+               1200px"
+        :alt="`Image ${n}`"
+        loading="lazy"
+      />
     </SplideSlide>
   </Splide>
-  
 </template>
 
 <style scoped>
