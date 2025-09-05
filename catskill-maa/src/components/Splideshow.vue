@@ -19,7 +19,7 @@ const options = {
 <template>
   <Splide :options="options" aria-label="Image Carousel">
     <SplideSlide v-for="n in 8" :key="n">
-      <img :src="`/rotation/image${n}.jpg`" :alt="`Image ${n}`" />
+      <img :src="`/rotation/image${n}.webp`" :alt="`Image ${n}`" />
     </SplideSlide>
   </Splide>
   
