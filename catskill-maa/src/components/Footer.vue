@@ -21,7 +21,7 @@
       <!-- Logo -->
       <div class="column is-3 has-text-centered">
         <figure class="image is-inline-block">
-          <img src="/logos/logo.png" alt="Catskill Martial Arts Academy Logo" />
+          <img src="/logos/logo.webp" alt="Catskill Martial Arts Academy Logo" />
         </figure>
           </div>
 
