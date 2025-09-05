@@ -1,23 +1,32 @@
 <script setup lang="ts">
-
+const images = [
+  { src: '/media/image1.webp', alt: 'Image 1' },
+  { src: '/media/image2.webp', alt: 'Image 2' },
+  { src: '/media/image3.webp', alt: 'Image 3' },
+  { src: '/media/image4.webp', alt: 'Image 4' },
+];
 </script>
 
 <template>
   <div class="mainbox">
-    <div class="floating box hover-underline">
-      <img src="/media/image1.webp" alt="Image 1" />
-    </div>
-    <div class="floating box hover-underline">
-      <img src="/media/image2.webp" alt="Image 2" />
-    </div>
-    <div class="floating box hover-underline">
-      <img src="/media/image3.webp" alt="Image 3" />
-    </div>
-    <div class="floating box hover-underline">
-      <img src="/media/image4.webp" alt="Image 4" />
+    <div v-for="(image, index) in images" :key="index" class="floating box hover-underline">
+      <img
+        :src="`${image.src}?nf_resize=fit&w=800`"
+        :srcset="`
+          ${image.src}?nf_resize=fit&w=400 400w,
+          ${image.src}?nf_resize=fit&w=800 800w,
+          ${image.src}?nf_resize=fit&w=1200 1200w
+        `"
+        sizes="(max-width: 600px) 400px,
+               (max-width: 1200px) 800px,
+               1200px"
+        :alt="image.alt"
+        loading="lazy"
+      />
     </div>
   </div>
 </template>
+
 <style scoped>
 .hover-underline {
   font-size: 2rem;
@@ -109,6 +118,7 @@ img {
     max-width: 85vw;
   }
 }
+
 @media (min-width: 1000px) and (max-width: 1280px) {
   .mainbox {
     align-items: center;
