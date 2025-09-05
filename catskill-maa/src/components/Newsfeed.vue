@@ -86,30 +86,27 @@ const newsItems = ref<NewsItem[]>([
     <aside class="menu newsfeed">
       <h3 class="section-title">Upcoming Events</h3>
 
-      <div
-        v-for="(item, index) in newsItems"
-        :key="index"
-      >
+      <div v-for="(item, index) in newsItems" :key="index">
         <div v-if="index === upcomingCount" class="section-divider">
           <h3 class="section-title">Past Events</h3>
         </div>
 
         <div class="media mb-4">
           <figure :class="['media-' + item.imagePosition, 'news-image-container']">
-             <img
-              :src="`${item.image}?nf_resize=fit&w=600`"
+            <img
+              :src="item.image"
               :srcset="`
-               ${item.image}?nf_resize=fit&w=300 300w,
-               ${item.image}?nf_resize=fit&w=600 600w,
-               ${item.image}?nf_resize=fit&w=900 900w
-    `"
-          sizes="(max-width: 480px) 300px,
-          (max-width: 768px) 600px,
-         900px"
-  alt="News image"
-  class="news-image"
-  loading="lazy"
-/>
+                ${item.image} 300w,
+                ${item.image} 600w,
+                ${item.image} 900w
+              `"
+              sizes="(max-width: 480px) 300px,
+                     (max-width: 768px) 600px,
+                     900px"
+              alt="News image"
+              class="news-image"
+              loading="lazy"
+            />
           </figure>
           <div class="media-content">
             <div class="content">
@@ -142,17 +139,18 @@ const newsItems = ref<NewsItem[]>([
   height: 100%;
   object-fit: cover;
 }
+
 .menu {
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  
-} 
+}
+
 .box {
-    margin-top: 130px;
-    width: 100%;
-    margin-right: 20px;
+  margin-top: 130px;
+  width: 100%;
+  margin-right: 20px;
 }
 
 .section-divider {
