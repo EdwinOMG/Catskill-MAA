@@ -25,21 +25,21 @@ const reviews: Testimonial[] = [
     name: 'Melia Giuffo',
     text: 'My son has grown so much confidence and focus thanks to Master Belsito. He is great with kids from all age groups and has taught my son so much! Highly recommend.',
     date: '2024-06-11',
-    stars: '/logos/stars.png',
+    stars: '/logos/stars.webp',
   },
   {
     logo: '/logos/facebook.webp',
     name: 'Margarita Morales',
     text: 'My son first joined when he began at 8 yrs old and he is almost 21 now. He is now a master at the academy. This school has taught him discipline, confidence, and determination. Master Belsito has been an excellent instructor to my son over the years. I highly recommend the Catskill Martial Arts Academy to anyone seeking quality in martial arts!',
     date: '2024-01-12',
-    stars: '/logos/stars.png',
+    stars: '/logos/stars.webp',
   },
   {
     logo: '/logos/facebook.webp',
     name: '-------',
     text: 'Donald has really helped my daughter build confidence in her self. Each class is fun, engaging, and pushes the kids to be their best. I highly recommend Catskill Martial Arts Academy!',
     date: '2023-10-03',
-    stars: '/logos/stars.png',
+    stars: '/logos/stars.webp',
   },
 ];
 </script>

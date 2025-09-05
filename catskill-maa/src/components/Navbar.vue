@@ -23,7 +23,7 @@ onUnmounted(() => {
     <nav :class="['navbar is-fixed-top', { scrolled: isScrolled }]">  
       <div class="navbar-brand">
     <a class="logo-link" v-if="!isScrolled" href="/">
-      <img src="/logos/logo.png" alt="Catskill MAA Logo">
+      <img src="/logos/logo.webp" alt="Catskill MAA Logo">
     </a>
     <div class="navbar-burger js-burger" aria-label="menu" aria-expanded="false" @click="isOpen = !isOpen" :class="{ 'is-active': isOpen }">
       <span></span>
