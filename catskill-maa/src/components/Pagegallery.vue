@@ -8,7 +8,17 @@ declare global {
 }
 
 onMounted(() => {
-  if (window.FB) {
+  if (!window.FB) {
+    const fbScript = document.createElement("script");
+    fbScript.async = true;
+    fbScript.defer = true;
+    fbScript.crossOrigin = "anonymous";
+    fbScript.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0";
+    fbScript.onload = () => {
+      window.FB?.XFBML.parse();
+    };
+    document.body.appendChild(fbScript);
+  } else {
     window.FB.XFBML.parse();
   }
 });
