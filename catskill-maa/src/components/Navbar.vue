@@ -330,4 +330,29 @@ onUnmounted(() => {
 .btn:hover .btn-slide-show-text1 {
   margin-left: 65px;
 }
+
+/* -------------------------
+   Mobile Navbar Bigger Text
+------------------------- */
+@media screen and (max-width: 1024px) {
+  .navbar-item {
+    font-size: 1.2rem;     /* increase text size */
+    padding: 1.2rem 2rem;  /* more breathing room */
+  }
+
+  .navbar-link {
+    font-size: 1.2rem;
+  }
+
+  .navbar-burger span {
+    height: 3px;           /* make burger bars thicker */
+    width: 28px;           /* slightly wider */
+  }
+
+  .logo-link img {
+    max-height: 6rem;      /* logo a bit bigger */
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+}
 </style>
