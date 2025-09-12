@@ -335,24 +335,41 @@ onUnmounted(() => {
    Mobile Navbar Bigger Text
 ------------------------- */
 @media screen and (max-width: 1024px) {
+  nav.navbar.is-fixed-top.is-active,
+  nav.navbar.is-fixed-top.scrolled.is-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;             /* full height */
+    width: 100vw;          /* full width */
+    height: 100vh;         /* viewport height */
+    background-color: white;
+    z-index: 1002;         /* above everything */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-menu.is-active {
+    flex: 1;               /* take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    overflow-y: auto;      /* allow scrolling if content is long */
+  }
+
+  .navbar-end {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .navbar-item {
-    font-size: 1.2rem;     /* increase text size */
-    padding: 1.2rem 2rem;  /* more breathing room */
-  }
-
-  .navbar-link {
-    font-size: 1.2rem;
-  }
-
-  .navbar-burger span {
-    height: 3px;           /* make burger bars thicker */
-    width: 28px;           /* slightly wider */
-  }
-
-  .logo-link img {
-    max-height: 6rem;      /* logo a bit bigger */
-    margin-top: 1rem;
-    margin-left: 1rem;
+    width: 100%;
+    font-size: 1.5rem;     /* bigger text */
+    padding: 1.5rem 2rem;
+    justify-content: flex-start;
   }
 }
 </style>
