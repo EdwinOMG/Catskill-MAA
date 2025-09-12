@@ -30,7 +30,7 @@ const reviews: Testimonial[] = [
   {
     logo: '/logos/facebook.webp',
     name: 'Margarita Morales',
-    text: 'My son first joined when he began at 8 yrs old and he is almost 21 now. He is now a master at the academy. This school has taught him discipline, confidence, and determination. Master Belsito has been an excellent instructor to my son over the years. I highly recommend the Catskill Martial Arts Academy to anyone seeking quality in martial arts!',
+    text: 'My son first joined when he began at 8 yrs old and he is almost 21 now. This school has taught him confidence and determination. Master Belsito has been an excellent instructor to my son over the years. I highly recommend the Catskill Martial Arts Academy to anyone seeking quality in martial arts!',
     date: '2024-01-12',
     stars: '/logos/stars.webp',
   },
@@ -65,7 +65,8 @@ const reviews: Testimonial[] = [
 <style scoped>
 
 .container {
-  width: 30%;
+  width: 50%;
+  
 padding-top: 0px;
 
 }
@@ -96,8 +97,10 @@ padding-top: 0px;
   margin-top: -55px;
   height: 200px;
   width: 90%;
-    margin-left: auto;  
-    margin-right: auto;
+  margin-left: auto;  
+  margin-right: auto;
+
+    
 }
 .stars {
   width: 150px;
