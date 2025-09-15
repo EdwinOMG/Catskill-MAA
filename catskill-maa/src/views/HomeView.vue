@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Homebox from '../components/Homebox.vue'
-import Splideshow from '../components/Splideshow.vue';
-import Map from '../components/Map.vue'
-import Contact from '../components/Contactform.vue'
+import Homebox from '@/components/Homebox.vue'
+import Splideshow from '@/components/Splideshow.vue';
+import Map from '@/components/Map.vue'
+import Contact from '@/components/Contactform.vue'
 import Reviews from '@/components/Reviews.vue';
 import Popmodal from '@/components/Popmodal.vue';
 import { onMounted, ref  } from 'vue';

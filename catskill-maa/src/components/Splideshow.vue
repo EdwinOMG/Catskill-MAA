@@ -87,4 +87,21 @@ img {
 }
 
 
+:deep(.splide__pagination__page) {
+  width: 3px;          /* smaller width */
+  height: 3px;         /* smaller height */
+  margin: 0 5px;       /* space between bullets */
+  border-radius: 50%;  /* keep them circular */
+  background-color: blue;
+  opacity: 0.6;
+}
+
+:deep(.splide__pagination__page.is-active) {
+  width: 3px;          /* slightly bigger active bullet */
+  height: 3px;
+  opacity: 1;
+  background-color: blue;
+}
+
+
 </style>

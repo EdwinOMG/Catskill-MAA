@@ -13,4 +13,35 @@ $blue7: #ABC4FF;
   $input-shadow: none
 );
 
+
+/* global accessibility helpers */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* make touch targets at least 48px */
+:root {
+  --touch-min: 48px;
+}
+button, a.button, .navbar-burger, .icon-button {
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  padding: 0.4rem 0.8rem;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+/* images should not cause layout shifts */
+img[width][height] { height: auto; }
+
+/* improve focus outlines for keyboard users */
+:focus {
+  outline: 3px solid #2563eb; /* visible outline */
+  outline-offset: 2px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');

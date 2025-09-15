@@ -1,24 +1,34 @@
 <!-- public/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Catskill Martial Arts Academy — kids, teens & adult classes in the Catskills. Build confidence, discipline, and fitness through Tang Soo Do training." />
     <title>Catskill MAA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMEPN102FC"></script>
-<script defer>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-JMEPN102FC');
-</script>
+
+    <!-- Google Tag: load async, initialize deferred -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMEPN102FC"></script>
+    <script defer>
+      // minimal deferred initialization so this script doesn't block initial render
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.addEventListener('load', () => {
+        gtag('js', new Date());
+        gtag('config', 'G-JMEPN102FC', { 'send_page_view': true });
+      });
+    </script>
+
+    <!-- Critical CSS loaded via your build (vite/webpack) -->
   </head>
   <body>
+    <a class="sr-only" href="#maincontent">Skip to content</a>
     <div id="app"></div>
+
+    <!-- Your app entry (only once) -->
     <script type="module" src="/src/main.ts"></script>
-    <div id="fb-root"></div>
 
-
+    <!-- NOTE: Facebook SDK is now loaded dynamically inside the FB component when needed -->
+    <!-- Do not include FB or maps here to reduce main-thread work. -->
   </body>
 </html>

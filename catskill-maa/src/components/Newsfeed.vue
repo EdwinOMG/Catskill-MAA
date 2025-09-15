@@ -82,87 +82,27 @@ const newsItems = ref<NewsItem[]>([
 </script>
 
 <template>
-  <div class="box">
-    <aside class="menu newsfeed">
-      <h3 class="section-title">Upcoming Events</h3>
-
-      <div v-for="(item, index) in newsItems" :key="index">
-        <div v-if="index === upcomingCount" class="section-divider">
-          <h3 class="section-title">Past Events</h3>
-        </div>
-
-        <div class="media mb-4">
-          <figure :class="['media-' + item.imagePosition, 'news-image-container']">
-            <img
-              :src="item.image"
-              :srcset="`
-                ${item.image} 300w,
-                ${item.image} 600w,
-                ${item.image} 900w
-              `"
-              sizes="(max-width: 480px) 300px,
-                     (max-width: 768px) 600px,
-                     900px"
-              alt="News image"
-              class="news-image"
-              loading="lazy"
-            />
-          </figure>
+  <aside class="box" aria-labelledby="newsTitle" role="complementary">
+    <h2 id="newsTitle" class="section-title">Upcoming Events</h2>
+    <ul class="news-list">
+      <li v-for="(item, index) in newsItems" :key="index" class="news-item">
+        <article class="media" role="article" aria-label="News item">
+          <img class="news-image" :src="item.image" :alt="item.title" width="160" height="90" loading="lazy"/>
           <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>{{ item.title }}</strong><br />
-                {{ item.description }}
-              </p>
-            </div>
+            <h3><strong>{{ item.title }}</strong></h3>
+            <p>{{ item.description }}</p>
           </div>
-        </div>
-      </div>
-    </aside>
-  </div>
+        </article>
+      </li>
+    </ul>
+  </aside>
 </template>
 
 <style scoped>
-.news-image-container {
-  width: 128px;
-  height: 128px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
-
-.news-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
-
-.menu {
-  width: 100%;
-  max-width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.box {
-  margin-top: 130px;
-  width: 100%;
-  margin-right: 20px;
-}
-
-.section-divider {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding-top: 1rem;
-  border-top: 2px solid #ccc;
-}
-
-.section-title {
-  font-weight: bold;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+.news-list { list-style: none; padding: 0; margin: 0; }
+.news-item { padding: 0.5rem 0; display:flex; }
+.news-image { margin-right: 0.75rem; object-fit:cover; width:128px; height:72px; border-radius:6px; }
+@media (max-width: 540px) {
+  .news-image { width:100px; height:56px; }
 }
 </style>
