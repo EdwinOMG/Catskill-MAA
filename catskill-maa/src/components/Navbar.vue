@@ -131,33 +131,36 @@ onUnmounted(() => {
 }
 
 @media screen and (max-width: 1024px) {
-  .navbar-menu.is-active {
+  
+.navbar-menu.is-active {
     position: fixed;
-    top: 3.25rem; /* height of the Bulma navbar */
+    top: 0;          /* start from very top */
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100vw;    /* full width */
+    height: 100vh;   /* full height */
     background-color: white;
     z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 1rem;
+    padding-top: 4rem; /* push content down so it doesn’t overlap the brand/burger */
   }
 
+  .navbar-item {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    justify-content: flex-start;
+  }
   .navbar-end {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
   }
 
-  .navbar-item {
-    width: 100%;
-    justify-content: flex-start;
-    padding-left: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  
 }
 
 /* -------------------------
