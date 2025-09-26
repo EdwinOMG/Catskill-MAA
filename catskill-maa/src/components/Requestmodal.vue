@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref} from 'vue';
+import { reactive, ref} from 'vue';
 
 const showModal = ref(false);
 
@@ -15,7 +15,10 @@ function closeModal() {
   showModal.value = false;
 }
 
+const loading = ref(false);
+
 async function handleSubmit() {
+  loading.value = true;
   const scriptURL = 'https://script.google.com/macros/s/AKfycbw5cxSl3jyd33_LoCdr6bvWVj6xDW1y2iPmN7_Evf5RTlB8rwkGgNe88LjwKXRkhoZwcQ/exec';
   const formData = new FormData();
 
@@ -41,6 +44,8 @@ async function handleSubmit() {
   } catch (error) {
     console.error('Error:', error);
     alert('There was an error submitting the form.');
+  } finally {
+    loading.value = false;
   }
 }
 </script>
@@ -58,6 +63,7 @@ async function handleSubmit() {
           <p class="modal-card-title">Request Information</p>
           <button class="delete" aria-label="close" @click="closeModal"></button>
         </header>
+
         <section class="modal-card-body">
           <!-- Form -->
           <form @submit.prevent="handleSubmit">
@@ -66,7 +72,13 @@ async function handleSubmit() {
                 <div class="field">
                   <label class="label">Full Name</label>
                   <div class="control has-icons-left">
-                    <input class="input is-small" type="text" v-model="form.name" required />
+                    <input
+                      class="input is-small"
+                      type="text"
+                      v-model="form.name"
+                      required
+                      :disabled="loading"
+                    />
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -78,7 +90,13 @@ async function handleSubmit() {
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control has-icons-left">
-                    <input class="input is-small" type="email" v-model="form.email" required />
+                    <input
+                      class="input is-small"
+                      type="email"
+                      v-model="form.email"
+                      required
+                      :disabled="loading"
+                    />
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -90,7 +108,13 @@ async function handleSubmit() {
                 <div class="field">
                   <label class="label">Phone Number</label>
                   <div class="control has-icons-left">
-                    <input class="input is-small" type="tel" v-model="form.number" required />
+                    <input
+                      class="input is-small"
+                      type="tel"
+                      v-model="form.number"
+                      required
+                      :disabled="loading"
+                    />
                     <span class="icon is-small is-left">
                       <i class="fas fa-phone"></i>
                     </span>
@@ -103,7 +127,7 @@ async function handleSubmit() {
                   <label class="label">Program</label>
                   <div class="control has-icons-left">
                     <div class="select is-small is-fullwidth">
-                      <select v-model="form.program" required>
+                      <select v-model="form.program" required :disabled="loading">
                         <option disabled value="">Select a program</option>
                         <option value="little-dragons">Little Dragons (Ages 4–7)</option>
                         <option value="youth">Youth (Ages 7–10)</option>
@@ -121,7 +145,12 @@ async function handleSubmit() {
                 <div class="field">
                   <label class="label">Questions/Concerns</label>
                   <div class="control">
-                    <textarea class="textarea is-small" v-model="form.message" placeholder="Additional details"></textarea>
+                    <textarea
+                      class="textarea is-small"
+                      v-model="form.message"
+                      placeholder="Additional details"
+                      :disabled="loading"
+                    ></textarea>
                   </div>
                 </div>
               </div>
@@ -129,10 +158,26 @@ async function handleSubmit() {
               <div class="column is-full">
                 <div class="field is-grouped">
                   <div class="control">
-                    <button class="button is-link is-small" type="submit">Submit</button>
+                    <button
+                      class="button is-link is-small"
+                      type="submit"
+                      :disabled="loading"
+                    >
+                      <span v-if="loading" class="icon">
+                        <i class="fas fa-spinner fa-spin"></i>
+                      </span>
+                      <span v-else>Submit</span>
+                    </button>
                   </div>
                   <div class="control">
-                    <button class="button is-light is-small" @click="closeModal" type="button">Cancel</button>
+                    <button
+                      class="button is-light is-small"
+                      @click="closeModal"
+                      type="button"
+                      :disabled="loading"
+                    >
+                      Cancel
+                    </button>
                   </div>
                 </div>
               </div>

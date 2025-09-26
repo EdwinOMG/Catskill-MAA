@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive, ref} from 'vue';
 
-const form = reactive({
+const showModal = ref(false);
+
+const form = ref({
   name: '',
   email: '',
   number: '',
@@ -9,15 +11,22 @@ const form = reactive({
   program: ''
 });
 
-const handleSubmit = async () => {
+function closeModal() {
+  showModal.value = false;
+}
+
+const loading = ref(false);
+
+async function handleSubmit() {
+  loading.value = true;
   const scriptURL = 'https://script.google.com/macros/s/AKfycbw5cxSl3jyd33_LoCdr6bvWVj6xDW1y2iPmN7_Evf5RTlB8rwkGgNe88LjwKXRkhoZwcQ/exec';
   const formData = new FormData();
 
-  formData.append('Name', form.name);
-  formData.append('Email', form.email);
-  formData.append('Number', form.number);
-  formData.append('Message', form.message);
-  formData.append('Program', form.program);
+  formData.append('Name', form.value.name);
+  formData.append('Email', form.value.email);
+  formData.append('Number', form.value.number);
+  formData.append('Message', form.value.message);
+  formData.append('Program', form.value.program);
 
   try {
     const response = await fetch(scriptURL, {
@@ -27,19 +36,18 @@ const handleSubmit = async () => {
 
     if (response.ok) {
       alert('Form submitted successfully!');
-      form.name = '';
-      form.email = '';
-      form.number = '';
-      form.message = '';
-      form.program = '';
+      form.value = { name: '', email: '', number: '', message: '', program: '' };
+      closeModal();
     } else {
       alert('There was a problem submitting the form.');
     }
   } catch (error) {
     console.error('Error:', error);
     alert('There was an error submitting the form.');
+  } finally {
+    loading.value = false;
   }
-};
+}
 </script>
 
 <template>
@@ -116,8 +124,16 @@ const handleSubmit = async () => {
     <div class="column is-full">
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link is-small" type="submit">Schedule your FREE Trial Class</button>
-            </div>
+<button
+  class="button is-link is-small"
+  type="submit"
+  :disabled="loading"
+>
+  <span v-if="loading" class="icon">
+    <i class="fas fa-spinner fa-spin"></i>
+  </span>
+  <span v-else>Schedule your FREE Trial Class</span>
+</button>            </div>
           </div>
         </div>
       </div>
