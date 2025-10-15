@@ -41,7 +41,7 @@ onUnmounted(() => {
   </div>
 
   <div class="navbar-menu menu2" :class="{ 'is-active': isOpen }">
-    <div class="mobile-close-btn-container is-hidden-tablet">
+    <div class="mobile-close-btn-container is-hidden-desktop">
     <button class="button is-white is-large" @click="isOpen = false" aria-label="Close menu">
       ← Close
     </button>
@@ -409,7 +409,7 @@ onUnmounted(() => {
 }
 
 .mobile-close-btn-container .button:hover {
-  color: #007aff; /* iOS blue tint or your brand color */
+  color: #007aff; 
   background: transparent;
 }
 </style>
