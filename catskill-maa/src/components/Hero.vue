@@ -7,7 +7,7 @@
       <div class="background-image" role="img" aria-label="Students training in dojo"></div>
       <div class="shader-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="title is-2">Proudly Representing the Catskills since 19XX</h1>
+        <h1 class="title is-2">Proudly Representing the Catskills since 2009</h1>
       </div>
     </div>
   </section>
