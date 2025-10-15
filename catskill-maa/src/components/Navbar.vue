@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import Requestbutton from '../components/Requestmodal.vue'
+
 const isOpen = ref(false)
 const isScrolled = ref(false)
-
+const isProgramsOpen = ref(false) // <-- ADD THIS: For mobile programs accordion
+// Test to see if work
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 40
-  
 }
+
+// Close the mobile sub-menu when the main menu is closed
+watch(isOpen, (newVal) => {
+  if (!newVal) {
+    isProgramsOpen.value = false
+  }
+})
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
@@ -16,7 +24,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
 </script>
 
 <template>
@@ -34,6 +41,11 @@ onUnmounted(() => {
   </div>
 
   <div class="navbar-menu menu2" :class="{ 'is-active': isOpen }">
+    <div class="mobile-close-btn-container is-hidden-desktop">
+    <button class="button is-white is-large" @click="isOpen = false" aria-label="Close menu">
+      ← Close
+    </button>
+  </div>
     <div class="navbar-end w-full is-flex is-justify-content-flex-end is-align-items-center">
 
 
@@ -46,14 +58,12 @@ onUnmounted(() => {
   </div>
 </div>
 
-<!-- Mobile: individual links, hidden on desktop -->
 <div class="is-hidden-desktop">
   <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Martial Arts</router-link>
   <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teen Martial Arts</router-link>
   <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adult Martial Arts</router-link>
 </div>
 
-<!-- Mobile: Just a single "Programs" link, NEED TO FIX ROUTES FOR MOBILE -->
 <router-link to="/About" class="navbar-item" @click="isOpen = false">About</router-link>
 <router-link to="/Media" class="navbar-item" @click="isOpen = false">Media</router-link>
 <router-link :to="{ path: '/', hash: '#contact' }" class="navbar-item" @click="isOpen = false">Contact</router-link>
@@ -374,5 +384,32 @@ onUnmounted(() => {
     padding: 1.5rem 2rem;
     justify-content: flex-start;
   }
+}
+
+
+
+
+
+.mobile-close-btn-container {
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+/* Make sure the button looks clean and easy to tap on mobile */
+.mobile-close-btn-container .button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-left: 0;
+  box-shadow: none;
+}
+
+.mobile-close-btn-container .button:hover {
+  color: #007aff; 
+  background: transparent;
 }
 </style>

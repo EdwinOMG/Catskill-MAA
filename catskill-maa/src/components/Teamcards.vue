@@ -57,7 +57,7 @@ function letsFlip(item: Post) {
 .flipper figure {
   margin: 0;
   width: 100%;
-  height: 300px;
+  height: 500px;
   backface-visibility: hidden;
   transition: transform 0.6s;
   border-radius: 8px;

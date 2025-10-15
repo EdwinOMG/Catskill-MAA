@@ -2,7 +2,6 @@
 import Pagegallery from '@/components/Pagegallery.vue';
 import Newsfeed from '@/components/Newsfeed.vue';
 </script>
-
 <template>
   <section class="section">
     <div class="container">
@@ -13,7 +12,9 @@ import Newsfeed from '@/components/Newsfeed.vue';
         </div>
 
         <!-- Newsfeed -->
-        <div class="column is-full-mobile is-two-thirds-tablet is-three-quarters-desktop newsfeed-column">
+        <div
+          class="column is-full-mobile is-full-tablet is-half-desktop is-offset-one-quarter-desktop newsfeed-column"
+        >
           <Newsfeed />
         </div>
       </div>
@@ -22,22 +23,19 @@ import Newsfeed from '@/components/Newsfeed.vue';
 </template>
 
 <style scoped>
-/* Bottom spacing for all columns */
+/* Margin bottom to add spacing between stacked columns on mobile/tablet */
 .column {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Add extra spacing on top of the Newsfeed column */
+/* Extra top margin for Newsfeed on desktop */
 .newsfeed-column {
-  margin-top: 2rem; /* adjust as needed */
-  padding-left: 50px;
+  margin-top: 2rem;
 }
 
-/* Optional: smaller top margin on desktop if you want */
 @media screen and (min-width: 1024px) {
   .newsfeed-column {
-    margin-top: 110px; /* adjust as needed */
-    
+    margin-top: 6rem; /* Adjust for desktop vertical spacing */
   }
 }
 </style>

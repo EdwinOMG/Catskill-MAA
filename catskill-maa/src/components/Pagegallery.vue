@@ -33,11 +33,11 @@ onMounted(() => {
       class="fb-page"
       data-href="https://www.facebook.com/CatskillMartialArtsAcademy"
       data-tabs="timeline"
-      data-width="300"
+      data-width="500"
       data-height="600"
       data-small-header="true"
       data-adapt-container-width="true"
-      data-hide-cover="true"
+      data-hide-cover="false"
       data-show-facepile="true"
       data-hide-cta="true"
       aria-hidden="false"
@@ -51,5 +51,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.box { width: 290px; margin-top: 110px; }
+.box {
+  width: 500px;
+  margin-top: 10rem;
+}
 </style>
