@@ -2,7 +2,7 @@
 
 By Edwin Morales Jr | Software Engineer
 
-A professional, Vue.js + TypeScript + Bulma website for Catskill Martial Arts Academy that improved student engagement and drove more visitors to the school.
+A professional, Vue.js + TypeScript + Bulma website for the Catskill Martial Arts Academy that improved student engagement and drove more visitors to the school.
 
 🚀 Highlights
 
