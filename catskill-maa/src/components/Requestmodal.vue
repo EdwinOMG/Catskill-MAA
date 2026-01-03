@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref} from 'vue';
+import { ref} from 'vue';
 
 const showModal = ref(false);
 
@@ -18,8 +18,8 @@ function closeModal() {
 const loading = ref(false);
 
 async function handleSubmit() {
-  loading.value = true;
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw5cxSl3jyd33_LoCdr6bvWVj6xDW1y2iPmN7_Evf5RTlB8rwkGgNe88LjwKXRkhoZwcQ/exec';
+  loading.value = true; 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxC54AkkAhCcaBe1XN4KFAZpD3aEMQbmR03wMVF94mIRb2ExyPpOW_qx1VZBwVsrcYriQ/exec';
   const formData = new FormData();
 
   formData.append('Name', form.value.name);
