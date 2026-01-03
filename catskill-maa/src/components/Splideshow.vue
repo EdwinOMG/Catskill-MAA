@@ -9,6 +9,7 @@ const options = {
   gap: '1rem',
   perPage: 3,
   autoHeight: true,
+  pagination: false,
   breakpoints: {
     1024: { perPage: 2 },
     640: { perPage: 1 },
