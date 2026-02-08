@@ -29,12 +29,12 @@
       <div class="column is-2">
         <h3 class="title is-5 has-text-black">Hours</h3>
         <p>Sunday: Closed</p>
-        <p>Monday: 6PM-9PM</p>
-        <p>Tuesday: 7PM-9PM</p>
-        <p>Wednesday: 6PM-9PM</p>
-        <p>Thursday: 7PM-9PM</p>
-        <p>Friday: 6PM-9PM</p>
-        <p>Saturday: 10AM-1PM</p>
+        <p>Monday: 5:15PM-9PM</p>
+        <p>Tuesday: 6PM-9PM</p>
+        <p>Wednesday: 5:15PM-9PM</p>
+        <p>Thursday: 6PM-9PM</p>
+        <p>Friday: 6PM-7:30PM</p>
+        <p>Saturday: 10AM-12PM</p>
       </div>
 
       <!-- Navigation -->
