@@ -120,6 +120,7 @@ onUnmounted(() => {
 /* Burger */
 .navbar-burger {
   cursor: pointer;
+
 }
 
 .navbar-burger span {
@@ -142,7 +143,7 @@ onUnmounted(() => {
 
 @media screen and (max-width: 1024px) {
   
-.navbar-menu.is-active {
+  .navbar-menu.is-active {
     position: fixed;
     top: 0;          /* start from very top */
     left: 0;
@@ -170,7 +171,34 @@ onUnmounted(() => {
     width: 100%;
   }
 
+
+   /* Hide desktop dropdown */
+  .navbar-item.has-dropdown {
+    display: none !important;
+  }
   
+  /* Force burger to show */
+  .navbar-burger {
+    display: flex !important;
+  }
+  
+  /* Hide desktop menu, show mobile */
+  .navbar-menu {
+    display: none;
+  }
+  
+  .navbar-menu.is-active {
+    display: flex !important;
+  }
+  
+  /* Smaller logo for tablets */
+  .logo-link img {
+    height: 100px !important;
+    max-width: 150px !important;
+    margin-top: 4rem !important;
+    margin-left: 1rem !important;
+  }
+
 }
 
 /* -------------------------
@@ -265,13 +293,33 @@ onUnmounted(() => {
    Logo Styling
 ------------------------- */
 .logo-link img {
-  max-height: 10rem;
-  aspect-ratio: 16/9;
+  height: 150px;  /* Bigger - was 80px */
   width: auto;
-  margin-left: 3rem;
-  margin-top: 30px;
+  max-width: 300px;  /* Bigger max width */
+  object-fit: contain;
+  margin-left: 2rem;
+  margin-top: 3rem;  /* Pushed down more */
+  display: block;
 }
 
+/* Responsive logo sizing */
+@media screen and (max-width: 1024px) {
+  .logo-link img {
+    height: 130px;
+    max-width: 200px;
+    margin-left: 1rem;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo-link img {
+    height: 100px;
+    max-width: 150px;
+    margin-left: 0.5rem;
+    margin-top: 3rem;
+  }
+}
 /* -------------------------
    Buttons & Trial Button
 ------------------------- */
@@ -412,4 +460,17 @@ onUnmounted(() => {
   color: #007aff; 
   background: transparent;
 }
+
+/* Desktop only - 1025px and up */
+@media screen and (min-width: 1025px) {
+  .navbar-menu {
+    display: flex !important;
+  }
+  
+  .navbar-burger {
+    display: none !important;
+  }
+}
+
+
 </style>
