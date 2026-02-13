@@ -53,15 +53,15 @@ onUnmounted(() => {
   <a class="navbar-link is-block">Programs</a>
   <div class="navbar-dropdown">
     <router-link to="/DragonProgram" class="navbar-item">Kids Martial Arts</router-link>
-    <router-link to="/TeenProgram" class="navbar-item">Teen Martial Arts</router-link>
-    <router-link to="/AdultProgram" class="navbar-item">Adult Martial Arts</router-link>
+    <router-link to="/TeenProgram" class="navbar-item">Teens Martial Arts</router-link>
+    <router-link to="/AdultProgram" class="navbar-item">Adults Martial Arts</router-link>
   </div>
 </div>
 
 <div class="mobile-programs-list">
   <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Martial Arts</router-link>
-  <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teen Martial Arts</router-link>
-  <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adult Martial Arts</router-link>
+  <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teens Martial Arts</router-link>
+  <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adults Martial Arts</router-link>
 </div>
 
 <router-link to="/About" class="navbar-item" @click="isOpen = false">About</router-link>
@@ -294,6 +294,13 @@ onUnmounted(() => {
 ------------------------- */
 .navbar-dropdown {
   background-color: white !important;
+  min-width: 250px;
+  padding: 0.5rem 0;
+}
+
+.navbar-dropdown .navbar-item {
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
 }
 
 .navbar-divider {
