@@ -16,7 +16,7 @@ const options = {
   autoplay: true,
   interval: 3000,
   arrows: true,
-  pagination: true,
+  pagination: false,
 };
 
 const reviews: Testimonial[] = [
@@ -72,7 +72,7 @@ padding-top: 0px;
 }
 
 .review-card {
-  padding: 1rem;
+  padding: 0rem;
   background: white;
   border-radius: 8px;
   text-align: center;
@@ -92,11 +92,11 @@ padding-top: 0px;
   padding-bottom: 0px;
 }
 .text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #333;
   margin-top: -55px;
   height: 200px;
-  width: 90%;
+  width: 60%;
   margin-left: auto;  
   margin-right: auto;
 
@@ -122,10 +122,7 @@ padding-top: 0px;
     
 }
 
-::v-deep(.splide__arrow:hover) {
-  color: white;
-  fill: white;
-}
+
 
 ::v-deep(.splide__arrow svg) {
   width: 30px;

@@ -23,3 +23,33 @@ const goToSection = () => {
    
 app.use(router)
 app.mount('#app')
+
+// Suppress Facebook SDK errors in development
+if (import.meta.env.DEV) {
+  const originalError = console.error;
+  console.error = (...args: any[]) => {
+    const message = typeof args[0] === 'string' ? args[0] : '';
+    const hasErrorUtils = args.some((arg: any) => 
+      typeof arg === 'object' && arg?.stack?.includes?.('ErrorUtils')
+    );
+    
+    if (
+      message.includes('ErrorUtils') || 
+      message.includes('fburl.com') ||
+      message.includes('Permissions policy violation') ||
+      hasErrorUtils
+    ) {
+      return;
+    }
+    originalError(...args);
+  };
+
+  const originalWarn = console.warn;
+  console.warn = (...args: any[]) => {
+    const message = typeof args[0] === 'string' ? args[0] : '';
+    if (message.includes('Violation') && message.includes('Permissions policy')) {
+      return;
+    }
+    originalWarn(...args);
+  };
+}

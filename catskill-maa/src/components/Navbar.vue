@@ -27,9 +27,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <nav :class="['navbar is-fixed-top', { scrolled: isScrolled }]">  
+    <nav :class="['navbar is-fixed-top', { scrolled: isScrolled, 'menu-open': isOpen }]">  
       <div class="navbar-brand">
-    <a class="logo-link" v-if="!isScrolled" href="/">
+    <a class="logo-link" v-if="!isScrolled && !isOpen" href="/">
       <img src="/logos/logo.webp" alt="Catskill MAA Logo">
     </a>
     <div class="navbar-burger js-burger" aria-label="menu" aria-expanded="false" @click="isOpen = !isOpen" :class="{ 'is-active': isOpen }">
@@ -58,7 +58,7 @@ onUnmounted(() => {
   </div>
 </div>
 
-<div class="is-hidden-desktop">
+<div class="mobile-programs-list">
   <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Martial Arts</router-link>
   <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teen Martial Arts</router-link>
   <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adult Martial Arts</router-link>
@@ -95,8 +95,11 @@ onUnmounted(() => {
    Navbar Base Styles
 ------------------------- */
 .navbar {
-  position: relative;
-  z-index: 1001;  top: 0;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: transparent;
   transition: background-color 0.3s ease, height 0.3s ease;
 }
@@ -105,7 +108,21 @@ onUnmounted(() => {
   background-color: whitesmoke;
   height: auto;
   transition: background-color 0.3s ease;
+}
 
+/* Mobile menu open - make navbar have white background */
+@media screen and (max-width: 768px) {
+  .navbar.menu-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white !important;
+    z-index: 1002;
+  }
 }
 
 /* Navbar Brand */
@@ -115,12 +132,15 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1003;
 }
 
 /* Burger */
 .navbar-burger {
   cursor: pointer;
-
+  z-index: 1003;
 }
 
 .navbar-burger span {
@@ -130,33 +150,35 @@ onUnmounted(() => {
 /* Navbar Menu */
 .navbar-menu {
   flex: 2;
-  justify-content: center;
+  justify-content: flex-end;
   transition: max-height 0.3s ease;
 }
 
 .navbar-end {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   padding: 0 1rem;
+  width: 100%;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   
   .navbar-menu.is-active {
     position: fixed;
-    top: 0;          /* start from very top */
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100vw;    /* full width */
-    height: 100vh;   /* full height */
+    width: 100vw;
+    height: 100vh;
     background-color: white;
-    z-index: 999;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 4rem; /* push content down so it doesn’t overlap the brand/burger */
+    padding-top: 5rem;
+    overflow-y: auto;
   }
 
   .navbar-item {
@@ -169,12 +191,6 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-  }
-
-
-   /* Hide desktop dropdown */
-  .navbar-item.has-dropdown {
-    display: none !important;
   }
   
   /* Force burger to show */
@@ -303,19 +319,19 @@ onUnmounted(() => {
 }
 
 /* Responsive logo sizing */
-@media screen and (max-width: 1024px) {
-  .logo-link img {
-    height: 130px;
-    max-width: 200px;
-    margin-left: 1rem;
-    margin-top: 3rem;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .logo-link img {
     height: 100px;
     max-width: 150px;
+    margin-left: 0.5rem;
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-link img {
+    height: 80px;
+    max-width: 120px;
     margin-left: 0.5rem;
     margin-top: 3rem;
   }
@@ -395,29 +411,29 @@ onUnmounted(() => {
 /* -------------------------
    Mobile Navbar Bigger Text
 ------------------------- */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   nav.navbar.is-fixed-top.is-active,
   nav.navbar.is-fixed-top.scrolled.is-active {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;             /* full height */
-    width: 100vw;          /* full width */
-    height: 100vh;         /* viewport height */
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
     background-color: white;
-    z-index: 1002;         /* above everything */
+    z-index: 1002;
     display: flex;
     flex-direction: column;
   }
 
   .navbar-menu.is-active {
-    flex: 1;               /* take remaining space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 2rem;
-    overflow-y: auto;      /* allow scrolling if content is long */
+    overflow-y: auto;
   }
 
   .navbar-end {
@@ -428,7 +444,7 @@ onUnmounted(() => {
 
   .navbar-item {
     width: 100%;
-    font-size: 1.5rem;     /* bigger text */
+    font-size: 1.5rem;
     padding: 1.5rem 2rem;
     justify-content: flex-start;
   }
@@ -461,14 +477,65 @@ onUnmounted(() => {
   background: transparent;
 }
 
-/* Desktop only - 1025px and up */
-@media screen and (min-width: 1025px) {
+/* Desktop and tablet - 769px and up */
+@media screen and (min-width: 769px) {
   .navbar-menu {
     display: flex !important;
   }
   
   .navbar-burger {
     display: none !important;
+  }
+  
+  .navbar-end {
+    justify-content: flex-end;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+  
+  .navbar-item {
+    padding: 1rem 0.75rem;
+    white-space: nowrap;
+  }
+  
+  /* Show dropdown, hide flat list on desktop/tablet */
+  .navbar-item.has-dropdown {
+    display: flex !important;
+  }
+  
+  .mobile-programs-list {
+    display: none !important;
+  }
+}
+
+/* Larger screens - more spacing */
+@media screen and (min-width: 1200px) {
+  .navbar-item {
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* Ultra-wide screens - bigger text and spacing */
+@media screen and (min-width: 2560px) {
+  .navbar-item {
+    padding: 1.5rem 2rem;
+    font-size: 1.25rem;
+  }
+  
+  .navbar-link {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile only - hide dropdown, show flat list */
+@media screen and (max-width: 768px) {
+  .navbar-item.has-dropdown {
+    display: none !important;
+  }
+  
+  .mobile-programs-list {
+    display: block !important;
+    width: 100%;
   }
 }
 
