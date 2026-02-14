@@ -7,12 +7,13 @@ interface Post {
   image: string
   name: string
   role: string
+  description: string
 }
 
 const posts = ref<Post[]>([
-  { id: 1, flip: false, image: '/people/edwin.jpg', name: 'Edwin Morales Jr', role: 'Instructor' },
-  { id: 2, flip: false, image: '/people/belsito.jpg', name: 'Donald Belsito', role: 'Head Instructor' },
-  { id: 3, flip: false, image: '/people/anaiah.jpg', name: 'Anaiah Santiago', role: 'Assistant Instructor' },
+  { id: 1, flip: false, image: '/people/edwin.jpg', name: 'Edwin Morales Jr', role: 'Instructor', description: '4th Dan Black Belt Instructor' },
+  { id: 2, flip: false, image: '/people/belsito.jpg', name: 'Donald Belsito', role: 'Head Instructor', description: '8th Dan Black Belt Head Instructor' },
+  { id: 3, flip: false, image: '/people/anaiah.jpg', name: 'Anaiah Santiago', role: 'Assistant Instructor', description: '1st Dan Black Belt Assistant Instructor' },
 ])
 
 function letsFlip(item: Post) {
@@ -35,7 +36,7 @@ function letsFlip(item: Post) {
           <figure class="back" aria-hidden="true">
             <div class="card-back">
               <p class="name">{{ item.name }}</p>
-              <p class="role">{{ item.role }}</p>
+              <p class="description">{{ item.description }}</p>
             </div>
           </figure>
         </button>
@@ -98,6 +99,15 @@ function letsFlip(item: Post) {
   object-fit: cover;
 }
 
+/* Shift Edwin and Anaiah photos upward */
+.column:nth-child(1) .full-image {
+  object-position: center 25%;
+}
+
+.column:nth-child(3) .full-image {
+  object-position: center 19%;
+}
+
 .card-back {
   text-align: center;
 }
@@ -105,11 +115,11 @@ function letsFlip(item: Post) {
 .card-back .name {
   font-weight: bold;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.card-back .role {
+.card-back .description {
   font-size: 1rem;
-  margin-top: 0.3rem;
   color: #555;
 }
 </style>
