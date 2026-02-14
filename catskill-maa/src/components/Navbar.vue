@@ -52,16 +52,16 @@ onUnmounted(() => {
 <div class="navbar-item has-dropdown is-hoverable is-hidden-touch">
   <a class="navbar-link is-block">Programs</a>
   <div class="navbar-dropdown">
-    <router-link to="/DragonProgram" class="navbar-item">Kids Martial Arts</router-link>
-    <router-link to="/TeenProgram" class="navbar-item">Teens Martial Arts</router-link>
-    <router-link to="/AdultProgram" class="navbar-item">Adults Martial Arts</router-link>
+    <router-link to="/DragonProgram" class="navbar-item">Kids Program</router-link>
+    <router-link to="/TeenProgram" class="navbar-item">Teens Program</router-link>
+    <router-link to="/AdultProgram" class="navbar-item">Adults Program</router-link>
   </div>
 </div>
 
 <div class="mobile-programs-list">
-  <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Martial Arts</router-link>
-  <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teens Martial Arts</router-link>
-  <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adults Martial Arts</router-link>
+  <router-link to="/DragonProgram" class="navbar-item" @click="isOpen = false">Kids Program</router-link>
+  <router-link to="/TeenProgram" class="navbar-item" @click="isOpen = false">Teens Program</router-link>
+  <router-link to="/AdultProgram" class="navbar-item" @click="isOpen = false">Adults Program</router-link>
 </div>
 
 <router-link to="/About" class="navbar-item" @click="isOpen = false">About</router-link>
@@ -111,7 +111,7 @@ onUnmounted(() => {
 }
 
 /* Mobile menu open - make navbar have white background */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .navbar.menu-open {
     position: fixed;
     top: 0;
@@ -162,7 +162,7 @@ onUnmounted(() => {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   
   .navbar-menu.is-active {
     position: fixed;
@@ -326,7 +326,7 @@ onUnmounted(() => {
 }
 
 /* Responsive logo sizing */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .logo-link img {
     height: 100px;
     max-width: 150px;
@@ -418,7 +418,7 @@ onUnmounted(() => {
 /* -------------------------
    Mobile Navbar Bigger Text
 ------------------------- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   nav.navbar.is-fixed-top.is-active,
   nav.navbar.is-fixed-top.scrolled.is-active {
     position: fixed;
@@ -484,8 +484,8 @@ onUnmounted(() => {
   background: transparent;
 }
 
-/* Desktop and tablet - 769px and up */
-@media screen and (min-width: 769px) {
+/* Desktop and tablet - 1025px and up */
+@media screen and (min-width: 1025px) {
   .navbar-menu {
     display: flex !important;
   }
@@ -515,6 +515,22 @@ onUnmounted(() => {
   }
 }
 
+/* Mobile only - hide dropdown, show flat list */
+@media screen and (max-width: 1024px) {
+  .navbar-item.has-dropdown {
+    display: none !important;
+  }
+  
+  .mobile-programs-list {
+    display: block !important;
+    width: 100%;
+  }
+  
+  .is-hidden-touch {
+    display: none !important;
+  }
+}
+
 /* Larger screens - more spacing */
 @media screen and (min-width: 1200px) {
   .navbar-item {
@@ -534,17 +550,6 @@ onUnmounted(() => {
   }
 }
 
-/* Mobile only - hide dropdown, show flat list */
-@media screen and (max-width: 768px) {
-  .navbar-item.has-dropdown {
-    display: none !important;
-  }
-  
-  .mobile-programs-list {
-    display: block !important;
-    width: 100%;
-  }
-}
 
 
 </style>
