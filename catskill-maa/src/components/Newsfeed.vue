@@ -1,3 +1,6 @@
+ VUE
+Copy
+
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
@@ -10,6 +13,7 @@ interface Event {
   description: string;
   image: string;
   category: 'tournament' | 'testing' | 'community' | 'special';
+  recurring?: boolean;
 }
 
 const events = ref<Event[]>([
@@ -73,6 +77,17 @@ const events = ref<Event[]>([
     image: '/events/fairbankstourn.jpg',
     category: 'tournament',
   },
+  {
+    id: 7,
+    title: 'Competition Class',
+    date: '2099-12-31',
+    time: '6:00 PM - 7:30 PM',
+    location: 'Catskill Martial Arts Academy',
+    description: 'Weekly competition training class every Friday. Open to students preparing for tournaments — focusing on sparring and cardio!',
+    image: '/events/greenuni.jpg',
+    category: 'special',
+    recurring: true,
+  },
 ]);
 
 // Carousel controls
@@ -117,7 +132,8 @@ const getCategoryLabel = (category: Event['category']) => {
   return labels[category];
 };
 
-const formatDate = (dateString: string) => {
+const formatDate = (dateString: string, recurring?: boolean) => {
+  if (recurring) return 'Every Friday';
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', { 
     weekday: 'long',
@@ -127,7 +143,13 @@ const formatDate = (dateString: string) => {
   });
 };
 
-const getMonthDay = (dateString: string) => {
+const getMonthDay = (dateString: string, recurring?: boolean) => {
+  if (recurring) {
+    return {
+      month: 'FRI',
+      day: '★',
+    };
+  }
   const date = new Date(dateString);
   return {
     month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
@@ -136,7 +158,8 @@ const getMonthDay = (dateString: string) => {
 };
 
 // Helper function to check if an event is expired
-const isEventExpired = (dateString: string) => {
+const isEventExpired = (dateString: string, recurring?: boolean) => {
+  if (recurring) return false;
   const eventDate = new Date(dateString);
   const today = new Date();
   
@@ -158,12 +181,12 @@ const upcomingEvents = computed(() => {
   if (selectedCategory.value === 'expired') {
     // Show only expired events, sorted by most recent first
     filtered = filtered
-      .filter(event => isEventExpired(event.date))
+      .filter(event => isEventExpired(event.date, event.recurring))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } else {
     // Show only upcoming events (not expired)
     filtered = filtered
-      .filter(event => !isEventExpired(event.date))
+      .filter(event => !isEventExpired(event.date, event.recurring))
       .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     
     // Apply category filter for upcoming events
@@ -321,8 +344,8 @@ onUnmounted(() => {
           >
             <!-- Date badge -->
             <div class="date-badge" :class="{ 'is-expired': selectedCategory === 'expired' }">
-              <div class="date-month">{{ getMonthDay(event.date).month }}</div>
-              <div class="date-day">{{ getMonthDay(event.date).day }}</div>
+              <div class="date-month">{{ getMonthDay(event.date, event.recurring).month }}</div>
+              <div class="date-day">{{ getMonthDay(event.date, event.recurring).day }}</div>
             </div>
 
             <!-- Event image -->
@@ -346,7 +369,7 @@ onUnmounted(() => {
                   <span class="icon has-text-info">
                     <i class="fas fa-calendar"></i>
                   </span>
-                  <span>{{ formatDate(event.date) }}</span>
+                  <span>{{ formatDate(event.date, event.recurring) }}</span>
                 </div>
                 
                 <div class="detail-item">
