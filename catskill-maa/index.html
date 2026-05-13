@@ -1,6 +1,6 @@
 <!-- public/index.html -->
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <link rel="icon" href="/favi/favicon.ico" />   <!--  THiS WHERE I CAN CHANGE GOOGLE LOGO -->
     <meta charset="utf-8" />
@@ -15,6 +15,14 @@
     <meta property="og:url" content="https://catskillmaa.com" />
     <meta property="og:type" content="website" />
 
+
+    <!-- Preload first hero image for LCP -->
+    <link rel="preload" href="/rotation/image1.webp" as="image" type="image/webp" />
+
+    <!-- Font Awesome & Bulma Social — loaded once here, not per-component -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin="anonymous" onload="this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
 
     <!-- Google Tag: load async, initialize deferred -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMEPN102FC"></script>

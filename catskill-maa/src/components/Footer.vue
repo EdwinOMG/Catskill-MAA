@@ -3,18 +3,6 @@
 </script>
 
 <template>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css"
-/>
     <footer class="footer has-background-light-blue has-text-black">
   <div class="container">
     <div class="columns is-multiline">
