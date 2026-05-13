@@ -36,7 +36,7 @@ const reviews: Testimonial[] = [
   },
   {
     logo: '/logos/facebook.webp',
-    name: '-------',
+    name: 'Anonymous',
     text: 'Donald has really helped my daughter build confidence in her self. Each class is fun, engaging, and pushes the kids to be their best. I highly recommend Catskill Martial Arts Academy!',
     date: '2023-10-03',
     stars: '/logos/stars.webp',
@@ -45,20 +45,31 @@ const reviews: Testimonial[] = [
 </script>
 
 <template>
-<div class="title has-text-centered is-1 pt-6    pb-0">Testimonials</div>
+<div class="title has-text-centered is-1 pt-6 pb-0">Testimonials</div>
 <div class="subtitle has-text-centered is-4 mt-1">See what people say about us</div>
 <div class="container">
   <Splide :options="options" aria-label="Testimonial Carousel">
     <SplideSlide v-for="(item, index) in reviews" :key="index">
       <div class="review-card">
-        <img :src="item.logo" alt="Logo" class="logo" />
+        <img :src="item.logo" alt="Facebook logo" class="logo" />
         <h3 class="name">{{ item.name }}</h3>
-        <img :src="item.stars" alt="Stars" class="stars" />
+        <img :src="item.stars" alt="5 stars" class="stars" />
         <p class="text">{{ item.text }}</p>
         <p class="date">{{ item.date }}</p>
       </div>
     </SplideSlide>
   </Splide>
+  <!-- Replace the URL below with your Google Business review link -->
+  <div class="review-cta">
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Catskill+Martial+Arts+Academy+Loch+Sheldrake+NY"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="google-review-btn"
+    >
+      ⭐ Leave Us a Google Review
+    </a>
+  </div>
 </div>
 </template>
 
@@ -72,45 +83,72 @@ padding-top: 0px;
 }
 
 .review-card {
-  padding: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2rem;
   background: white;
   border-radius: 8px;
   text-align: center;
-  border-color: #333;
-  border-width: 3px;
-  border-style: solid;
+  border: 3px solid #333;
 }
+
 .logo {
-  width: 100px;
-  height: 100px;
-  padding-bottom: 0px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
 }
 
 .name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  padding-bottom: 0px;
+  margin: 0 0 0.5rem;
 }
-.text {
-  font-size: 1.1rem;
-  color: #333;
-  margin-top: -55px;
-  height: 200px;
-  width: 60%;
-  margin-left: auto;  
-  margin-right: auto;
 
-    
-}
 .stars {
   width: 150px;
   height: 150px;
   margin-top: -3.5rem;
+  margin-bottom: 0;
 }
+
+.text {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: -55px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.75rem;
+}
+
 .date {
   font-size: 0.8rem;
   color: gray;
-  padding-bottom: 20px;
+}
+
+.review-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.google-review-btn {
+  display: inline-block;
+  background-color: white;
+  color: darkblue;
+  border: 2px solid darkblue;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.google-review-btn:hover {
+  background-color: darkblue;
+  color: white;
 }
 
 ::v-deep(.splide__arrow) {

@@ -25,11 +25,6 @@ const router = createRouter({
       component: MediaView,
     },
     {
-      path: '/Programs',
-      name: 'Programs',
-      component: ProgramsView,
-    },
-    {
       path: '/DragonProgram',
       name: 'DragonProgram',
       component: DragonsView,

@@ -76,7 +76,7 @@ const options = {
 }
 
 .splide {
-  padding-top: 180px;
+  padding-top: 0;
   width: auto;
 }
 img {

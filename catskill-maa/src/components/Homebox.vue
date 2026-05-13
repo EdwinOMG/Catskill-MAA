@@ -8,7 +8,7 @@
     <h1 class="title is-4 box-title">Welcome to the Catskill Martial Arts Academy</h1>
     <p class="paragraph">We are proud to teach traditional Tang Soo Do, a Korean martial art that emphasizes discipline, respect, and personal
         development. Whether you're beginning your martial arts journey or continuing years of practice, you'll find a supportive
-        and challenging environment where you can grow physically and mentally. Our experienced instructors are commited to preserving 
+        and challenging environment where you can grow physically and mentally. Our experienced instructors are committed to preserving 
         the values of Tang Soo Do while helping each student build confidence, focus, and strength.
     </p>
 

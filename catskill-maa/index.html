@@ -6,7 +6,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Catskill Martial Arts Academy — kids, teens & adult classes in the Catskills. Build confidence, discipline, and fitness through Tang Soo Do training." />
-    <title>Catskill MAA</title>
+    <title>Catskill Martial Arts Academy | Tang Soo Do | Loch Sheldrake, NY</title>
+
+    <!-- Open Graph (social sharing previews) -->
+    <meta property="og:title" content="Catskill Martial Arts Academy" />
+    <meta property="og:description" content="Kids, teen & adult Tang Soo Do classes in the Catskills. Try a free class today." />
+    <meta property="og:image" content="https://catskillmaa.com/logos/logo.webp" />
+    <meta property="og:url" content="https://catskillmaa.com" />
+    <meta property="og:type" content="website" />
+
 
     <!-- Google Tag: load async, initialize deferred -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMEPN102FC"></script>
@@ -18,6 +26,25 @@
         gtag('js', new Date());
         gtag('config', 'G-JMEPN102FC', { 'send_page_view': true });
       });
+    </script>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "Catskill Martial Arts Academy",
+      "url": "https://catskillmaa.com",
+      "telephone": "(845) 423-9497",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1175 NY-52",
+        "addressLocality": "Loch Sheldrake",
+        "addressRegion": "NY"
+      },
+      "openingHours": ["Mo-We-Fr 16:45-21:00", "Tu-Th 18:00-21:00", "Sa 10:00-12:00"],
+      "description": "Tang Soo Do martial arts for kids, teens, and adults in the Catskills since 2009."
+    }
     </script>
 
     <!-- Critical CSS loaded via your build (vite/webpack) -->

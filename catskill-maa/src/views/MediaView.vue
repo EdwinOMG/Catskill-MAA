@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import UpcomingEvents from '@/components/Newsfeed.vue';
 import Pagegallery from '@/components/Pagegallery.vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  title: 'Events & Media | Catskill Martial Arts Academy',
+  meta: [
+    { name: 'description', content: 'Stay up to date with upcoming tournaments, belt testing, and community events at Catskill Martial Arts Academy. Follow us on Facebook for the latest news.' }
+  ]
+});
 </script>
 
 <template>

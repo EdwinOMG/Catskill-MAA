@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from '@unhead/vue/client'
 import App from './App.vue'
 import '../catskill-maa.scss';
 import '@splidejs/vue-splide/css/skyblue';
@@ -15,6 +16,8 @@ router.afterEach((to) => {
 });
 
 const app = createApp(App)
+const head = createHead()
+app.use(head)
 
 const goToSection = () => {
      router.push({ path: '/#contact' });

@@ -2,6 +2,14 @@
 import Teamcards from '@/components/Teamcards.vue';
 import Hero from '@/components/Hero.vue';
 import Aboutbox from '@/components/Aboutbox.vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  title: 'About Us | Catskill Martial Arts Academy',
+  meta: [
+    { name: 'description', content: 'Learn about Catskill Martial Arts Academy — proudly serving the Catskills since 2009. Meet our instructors and discover our mission to teach traditional Tang Soo Do.' }
+  ]
+});
 </script>
 
 <template>
