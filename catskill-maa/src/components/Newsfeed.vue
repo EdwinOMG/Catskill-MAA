@@ -149,12 +149,17 @@ const getCategoryLabel = (category: Event['category']) => {
   return labels[category];
 };
 
+const parseLocalDate = (dateString: string) => {
+  const [year, month, day] = dateString.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
 const formatDate = (dateString: string, recurring?: boolean) => {
   if (recurring) return 'Every Friday';
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
+  const date = parseLocalDate(dateString);
+  return date.toLocaleDateString('en-US', {
     weekday: 'long',
-    month: 'long', 
+    month: 'long',
     day: 'numeric',
     year: 'numeric'
   });
@@ -167,20 +172,18 @@ const getMonthDay = (dateString: string, recurring?: boolean) => {
       day: '★',
     };
   }
-  const date = new Date(dateString);
+  const date = parseLocalDate(dateString);
   return {
     month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
     day: date.getDate(),
   };
 };
 
-// Helper function to check if an event is expired
 const isEventExpired = (dateString: string, recurring?: boolean) => {
   if (recurring) return false;
-  const eventDate = new Date(dateString);
+  const eventDate = parseLocalDate(dateString);
   const today = new Date();
-  
-  // Set both dates to midnight for accurate comparison
+
   eventDate.setHours(0, 0, 0, 0);
   today.setHours(0, 0, 0, 0);
   
