@@ -87,8 +87,8 @@ const events = ref<Event[]>([
   {
     id: 8,
     title: 'CPR/First Aid Class',
-    date: 'TBA',
-    time: 'TBA',
+    date: 'TBD',
+    time: 'TBD',
     location: 'Catskill Martial Arts Academy',
     description: 'Get certified in CPR and First Aid. Date to be announced — stay tuned!',
     image: '/events/cpr.jpg',
@@ -104,6 +104,56 @@ const events = ref<Event[]>([
     image: '/events/greenuni.jpg',
     category: 'special',
     recurring: true,
+  },
+  {
+    id: 10,
+    title: 'Krispy Kreme Fundraiser',
+    date: '2026-07-15',
+    time: 'Orders Due',
+    location: 'Catskill Martial Arts Academy',
+    description: 'Support our travelling team! Order forms are available through any instructor. All proceeds go directly to the travelling team. Orders must be submitted by July 15th.',
+    image: '/events/krispykreme.jpg',
+    category: 'community',
+  },
+  {
+    id: 11,
+    title: 'Wako Worlds Professional Sparring Seminar',
+    date: '2026-07-17',
+    time: '6:00 PM - 8:00 PM EST',
+    location: 'Tri City Karate Academy',
+    description: '$50 entry fee. All proceeds go to support our WAKO Jr. Worlds team. Don\'t miss this professional-level sparring seminar!',
+    image: '/events/sparringsem.jpg',
+    category: 'special',
+  },
+  {
+    id: 12,
+    title: 'North East Open',
+    date: '2026-08-08',
+    time: 'Doors Open at 7:30 AM',
+    location: 'Albany, NY',
+    description: 'Come compete at the North East Open! Doors open at 7:30 AM. A great tournament opportunity for all competitors in the region.',
+    image: '/events/northeastopen.jpg',
+    category: 'tournament',
+  },
+  {
+    id: 13,
+    title: 'Battle in the Valley',
+    date: '2026-08-09',
+    time: 'TBA',
+    location: 'Resorts World Catskill, Monticello, NY',
+    description: 'Join us for the Battle in the Valley at Resorts World Catskill! An exciting tournament opportunity for competitors of all levels.',
+    image: '/events/valleytouurney.jpg',
+    category: 'tournament',
+  },
+  {
+    id: 14,
+    title: 'Custom Brand Fighting Uniforms',
+    date: 'TBD',
+    time: 'Coming Soon',
+    location: 'Catskill Martial Arts Academy',
+    description: 'We are excited to announce our brand new customized fighting uniforms are coming! Stay tuned for more details on availability.',
+    image: '/events/fightuni.png',
+    category: 'special',
   },
 ]);
 
@@ -156,6 +206,7 @@ const parseLocalDate = (dateString: string) => {
 
 const formatDate = (dateString: string, recurring?: boolean) => {
   if (recurring) return 'Every Friday';
+  if (dateString === 'TBD') return 'Date TBD';
   const date = parseLocalDate(dateString);
   return date.toLocaleDateString('en-US', {
     weekday: 'long',
@@ -172,6 +223,9 @@ const getMonthDay = (dateString: string, recurring?: boolean) => {
       day: '★',
     };
   }
+  if (dateString === 'TBD') {
+    return { month: 'TBD', day: '' };
+  }
   const date = parseLocalDate(dateString);
   return {
     month: date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(),
@@ -181,6 +235,7 @@ const getMonthDay = (dateString: string, recurring?: boolean) => {
 
 const isEventExpired = (dateString: string, recurring?: boolean) => {
   if (recurring) return false;
+  if (dateString === 'TBD') return false;
   const eventDate = parseLocalDate(dateString);
   const today = new Date();
 

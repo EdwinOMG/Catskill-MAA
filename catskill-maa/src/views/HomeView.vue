@@ -98,7 +98,16 @@ const showModal = ref(false);
   color: darkblue;
 }
 
+@media (max-width: 1024px) {
+  .hero-cta {
+    padding-top: 130px;
+  }
+}
+
 @media (max-width: 640px) {
+  .hero-cta {
+    padding-top: 110px;
+  }
   .hero-title {
     font-size: 1.3rem;
   }

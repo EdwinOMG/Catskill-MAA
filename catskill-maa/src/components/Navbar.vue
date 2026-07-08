@@ -209,12 +209,20 @@ onUnmounted(() => {
   
   /* Smaller logo for tablets */
   .logo-link img {
-    height: 100px !important;
-    max-width: 150px !important;
-    margin-top: 4rem !important;
+    height: 80px !important;
+    max-width: 130px !important;
+    margin-top: 1.5rem !important;
     margin-left: 1rem !important;
   }
+}
 
+@media screen and (max-width: 480px) {
+  .logo-link img {
+    height: 55px !important;
+    max-width: 90px !important;
+    margin-top: 2rem !important;
+    margin-left: 0.5rem !important;
+  }
 }
 
 /* -------------------------
@@ -335,14 +343,6 @@ onUnmounted(() => {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .logo-link img {
-    height: 80px;
-    max-width: 120px;
-    margin-left: 0.5rem;
-    margin-top: 3rem;
-  }
-}
 /* -------------------------
    Buttons & Trial Button
 ------------------------- */

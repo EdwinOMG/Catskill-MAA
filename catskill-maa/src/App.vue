@@ -2,8 +2,9 @@
   import Navbar from './components/Navbar.vue'
   import Footer from './components/Footer.vue';
   import Topbar from './components/Topbar.vue';
+  import MerchBanner from './components/MerchBanner.vue';
 
-  
+
 </script>
 
 <template>
@@ -14,9 +15,10 @@
     <Navbar />
     </header>
     <RouterView />
-    
-  <Footer /> 
+
+  <Footer />
   </main>
+  <MerchBanner />
   </div>
 </template>
 
