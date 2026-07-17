@@ -3,6 +3,7 @@
   import Footer from './components/Footer.vue';
   import Topbar from './components/Topbar.vue';
   import MerchBanner from './components/MerchBanner.vue';
+  import KidstockBubble from '@/components/KidstockBubble.vue'
 
 
 </script>
@@ -15,7 +16,7 @@
     <Navbar />
     </header>
     <RouterView />
-
+    <KidstockBubble />
   <Footer />
   </main>
   <MerchBanner />
